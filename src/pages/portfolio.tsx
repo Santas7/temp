@@ -12,13 +12,17 @@ import {
   MessageCircle,
   Brain,
   ExternalLink,
+  Bot,
 } from "lucide-react";
 
-import droneStationImage1 from "@assets/image_1752742122090.png";
-import droneStationImage2 from "@assets/image_1752742128225.png";
-import droneStationImage3 from "@assets/image_1752742133397.png";
-import droneImage1 from "@assets/image_1752742138453.png";
-import droneImage2 from "@assets/image_1752742140087.png";
+import postamatImage1 from "@assets/postamat1.png";
+import postamatImage2 from "@assets/postamat2.png";
+import postamatImage3 from "@assets/postamat3.png";
+
+import postamatImage4 from "@assets/postamat4.png";
+import postamatImage5 from "@assets/postamat5.png";
+import postamatImage6 from "@assets/postamat6.png";
+
 import healthcareImage1 from "@assets/healthcare_image_1.png"; // Placeholder: Replace with actual image paths
 import healthcareImage2 from "@assets/healthcare_image_2.png";
 import healthcareImage3 from "@assets/healthcare_image_3.png";
@@ -45,14 +49,20 @@ const Portfolio = () => {
       icon: <Rocket className="w-8 h-8" />,
       title: "ПО для дрон-постаматов",
       description:
-        "Пилотный проект завода гражданских дронов «Транспорт будущего» и сервиса доставки «Самокат». Автоматический постамат, который умеет принимать посылки с дрона. Первый в России проект подобного рода.",
-      fullDescription:
-        "Суть проекта — автоматический постамат, который умеет не только автономно выдавать посылки, но и принимать посылки с дрона. Протестировано в работе первым лицом государства.",
+        "Пилотный проект завода гражданских дронов «Транспорт будущего» и сервиса доставки «Самокат». Автоматический постамат, который умеет принимать посылки с дрона.",
+      additionalDescription:
+        "Первый в России проект подобного рода. Суть проекта — автоматический постамат, который умеет не только автономно выдавать посылки, но и принимать посылки с дрона. Протестировано в работе первым лицом государства.",
       technologies: ["IoT", "Backend", "Hardware", "Frontend"],
-      clients: ["Транспорт будущего", "Самокат"],
+      clients: {
+        "Транспорт будущего": "https://tb-drone.ru/",
+        "Самокат": "https://samokat.ru/",
+      },
       color: "bg-blue-100 text-blue-600",
       status: "Законченный MVP",
-      media: ["Статья 1", "Статья 2"],
+      media: {
+        "Статья 1": "https://volga.news/article/741908.html",
+        "Статья 2": "https://oborot.ru/news/skolko-samokat-gotov-potratit-na-eksperimentalnuyu-dostavku-kvadrokopterami-v-tolyatti-i-kak-eto-vse-budet-rabotat-i236262.html",
+      },
       results: [
         "ПО для встроенного компьютера постомата",
         "Объединение фронтенда, внешних сервисов и PLC-контроллеров",
@@ -60,7 +70,7 @@ const Portfolio = () => {
         "Прототип интерфейса для встроенного планшета",
         "Успешное тестирование первым лицом государства",
       ],
-      images: [droneStationImage1, droneStationImage2, droneStationImage3, droneImage1, droneImage2],
+      images: [postamatImage1, postamatImage2, postamatImage3, postamatImage4, postamatImage5, postamatImage6],
     },
     {
       id: 2,
@@ -68,10 +78,12 @@ const Portfolio = () => {
       title: "Система контроля соблюдения бизнес-процессов на базе ИИ",
       description:
         "Система для Оптических сетей с транскрипцией разговоров врачей с пациентами и оценкой соответствия корпоративным стандартам.",
-      fullDescription:
+      additionalDescription:
         "Комплексная система для медицинских учреждений, которая автоматически анализирует качество общения врачей с пациентами. Включает модули транскрипции речи в текст, оценки соответствия разговоров медицинским стандартам, сбора статистики и отслеживания динамики изменений.",
-      technologies: ["Speech-to-Text", "LLM", "Analytics", "AI", "Healthcare"],
-      clients: ["Роскошное зрение"],
+      technologies: ["Speech-to-Text", "LLM", "Аналитика", "AI", "Healthcare", "Frontend"],
+      clients: {
+        "Роскошное зрение": "https://www.lunettes.ru/",
+      },
       color: "bg-red-100 text-red-600",
       status: "Завершен",
       results: [
@@ -89,7 +101,7 @@ const Portfolio = () => {
       title: "PRM-система с ИИ-поиском",
       description:
         "Personal Relationships Management System для управления персональными связями и эффективного нетворкинга с ИИ-поиском людей.",
-      fullDescription:
+      additionalDescription:
         "Система для управления персональными связями и эффективного нетворкинга. Позволяет объединить все контакты клиента в единую базу 'карточек', автоматически обогатить карточки людей информацией из открытых источников (OSINT), а также с помощью ИИ осуществлять интеллектуальный поиск людей по произвольному запросу.",
       technologies: [
         "LLM",
@@ -100,9 +112,11 @@ const Portfolio = () => {
         "RAG",
         "FAISS",
         "Social networks",
-        "AI Search",
+        "AI Search"
       ],
-      clients: ["Бизнес-клуб «Атланты»"],
+      clients: {
+        "Бизнес-клуб «Атланты»": "https://atlanty.ru/",
+      },
       color: "bg-purple-100 text-purple-600",
       status: "Завершен",
       results: [
@@ -120,7 +134,7 @@ const Portfolio = () => {
       title: "Скринкаст-рекордер",
       description:
         "Desktop-программа для записи экрана и любых действий пользователя. Часть инновационной обучающей платформы ScreenStructor.",
-      fullDescription:
+      additionalDescription:
         "Desktop-программа для записи экрана и любых действий пользователя (клавиатура, мышь). Часть инновационной обучающей платформы, основанной на web-эмуляции десктоп-приложений. Позволяет создавать интерактивные обучающие материалы.",
       technologies: [
         "video encoding",
@@ -131,7 +145,7 @@ const Portfolio = () => {
         "EdTech",
         "Recording",
       ],
-      clients: ["ScreenStructor"],
+      clients: {"ScreenStructor": ""},
       color: "bg-orange-100 text-orange-600",
       status: "Завершен",
       results: [
@@ -152,7 +166,7 @@ const Portfolio = () => {
       title: "Telegram-бот для расшифровки голосовых",
       description:
         "Telegram-бот для расшифровки голосовых сообщений и аудиодорожек видео-сообщений с поддержкой «кружков» Telegram.",
-      fullDescription:
+      additionalDescription:
         "Удобный Telegram-бот, который автоматически преобразует голосовые сообщения и аудиодорожки видео-сообщений в текст. Поддерживает «кружки» Telegram, работает с различными форматами аудио, обеспечивает высокую точность распознавания речи. Можно отправлять сообщения напрямую, а также включать бота в любые чаты для расшифровки всех входящих аудиосообщений.",
       technologies: ["Telegram", "Bot", "Audio AI", "Speech-to-Text", "Whisper"],
       color: "bg-green-100 text-green-600",
@@ -172,7 +186,7 @@ const Portfolio = () => {
       title: "AI-ассистент HR-агентства",
       description:
         "ИИ-ассистент для управления базой сотрудников, сбора статистики и диалога через web-интерфейс.",
-      fullDescription:
+      additionalDescription:
         "Интеллектуальная система для HR-агентства с возможностями управления базой сотрудников, автоматического сбора и анализа статистики, а также ведения диалога с пользователями через удобный web-интерфейс.",
       technologies: ["AI-Agent", "Web", "HR", "Analytics"],
       color: "bg-violet-100 text-violet-600",
@@ -191,7 +205,7 @@ const Portfolio = () => {
       title: "AI-ассистент для шахмат (Chrome-плагин)",
       description:
         "Chrome-расширение с мульти-агентной системой для анализа шахматных позиций и рекомендаций ходов.",
-      fullDescription:
+      additionalDescription:
         "Интеллектуальное Chrome-расширение для шахматистов с мульти-агентной архитектурой. Включает агентов для анализа позиции, RAG-рекомендации и выбора оптимального хода. Помогает улучшить игру и понимание шахматных позиций.",
       technologies: ["AI-Agent", "Extension", "Chess", "Multi-Agent"],
       color: "bg-teal-100 text-teal-600",
@@ -210,7 +224,7 @@ const Portfolio = () => {
       title: "Бот справочник по синтезатору KORG",
       description:
         "AI-бот консультирующий по документации синтезатора Korg Pa5X.",
-      fullDescription:
+      additionalDescription:
         "Интеллектуальный бот-консультант, который помогает пользователям разобраться с функциями и возможностями синтезатора Korg Pa5X. Использует технологию RAG для поиска информации в технической документации и предоставления точных ответов на вопросы пользователей.",
       technologies: ["LLM", "RAG", "Bot", "Documentation", "Vector search"],
       color: "bg-indigo-100 text-indigo-600",
@@ -228,7 +242,7 @@ const Portfolio = () => {
       title: "Видеосервис распознавания действий человека",
       description:
         "Система компьютерного зрения для распознавания действий человека в видеопотоке с точностью до 95%.",
-      fullDescription:
+      additionalDescription:
         "Веб-сервис для распознавания движения человека на видео создан с целью автоматизированного обнаружения правомерных и неправомерных действий и профилактики инцидентов на охраняемых объектах и КПП. Разработан с помощью алгоритмов машинного зрения с использованием обучения ИИ-моделей на собственном датасете. Точность распознавания некоторых моделей достигает 92%, за счет использования комплексных метрик предсказания и использование математических вероятностей для принятия решения.",
       technologies: ["CV", "Security", "Video Analysis", "AI"],
       color: "bg-yellow-100 text-yellow-600",
@@ -242,20 +256,34 @@ const Portfolio = () => {
         "Комплексные метрики предсказания с математическими вероятностями",
       ],
     },
+    {
+      id: 10,
+      icon: <Bot className="w-8 h-8" />,
+      title: "Бот-ассистент для интернет магазинов + сайт",
+      description:
+        "Сайт с интеллектуальным ботом-ассистентом, помогающим с подбором товаров и формированием лендингов.",
+      additionalDescription:
+        "Был разработан сайт с интеллектуальным ботом-ассистентом. Данный бот представляет собой ИИ-модель дообученную на базе товаров интернет магазина, благодаря чему бот может консультировать клиентов по ассортименту, помогать с подбором продуктов для тех или иных блюд. Помимо этого добавлена интеллектуальная память, за счет чего нет необходимости каждый раз формулировать предложение с самого начала, достаточно дописать уточнение и бот все поймет. Также, для удобства, бот генерирует отдельный лендинг с релевантными товарами по вашему запросу. Бот достаточно универсален, подойдет под любой интернет магазин и не только. UI-часть разработана на HTML, CSS, JS. Бэкенд-часть и сервер написаны на Python с использованием Flask, Langchain, Faiss, OpenAI.",
+      technologies: ["AI", "E-commerce", "Langchain", "Flask", "OpenAI", "HTML", "CSS", "JS"],
+      color: "bg-purple-100 text-purple-600",
+      status: "Технодемо",
+      results: [
+        "ИИ-бот, дообученный на базе ассортимента магазина",
+        "Консультации по продуктам и подбору ингредиентов",
+        "Интеллектуальная память для продолжения диалога",
+        "Автоматическая генерация лендингов с релевантными товарами",
+        "Универсальность — применим к любым интернет-магазинам",
+        "Фронтенд: HTML, CSS, JavaScript",
+        "Бэкенд: Python, Flask, Langchain, Faiss, OpenAI",
+      ],
+    }    
+    ,
   ];
 
-  // const clients = [
-  //   { name: "Транспорт будущего", industry: "Дроны и логистика" },
-  //   { name: "Самокат", industry: "Доставка" },
-  //   { name: "Роскошное зрение", industry: "Медицина" },
-  //   { name: "ScreenStructor", industry: "EdTech" },
-  //   { name: "Самарский университет", industry: "Образование" },
-  //   { name: "Бизнес-клуб Атланты", industry: "Бизнес-сообщество" },
-  // ];
 
   return (
     <div className="pt-[140px] pb-20 px-4">
-      <div className="max-w-6xl mx-auto">
+     <div className="max-w-4xl mx-auto">
         <Breadcrumb
           items={[
             { label: "Главная", href: "/" },
@@ -329,10 +357,16 @@ const Portfolio = () => {
                         <h3 className="text-2xl font-bold text-gray-800 mb-3">
                           {project.title}
                         </h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed">
-                          {project.description}
-                        </p>
-
+                        <p
+  className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg"
+>
+  {project.description}
+</p>
+<p
+  className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg"
+>
+  {project.additionalDescription}
+</p>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {project.technologies.map((tech, techIndex) => (
                             <Badge
@@ -346,15 +380,52 @@ const Portfolio = () => {
                         </div>
 
                         <div className="space-y-2 text-sm text-gray-500">
-                          {project.clients && project.clients.length > 0 && (
+                        
+                          {project.clients && (
                             <div>
                               <strong>Клиенты:</strong>{" "}
-                              {project.clients.join(", ")}
+                              {typeof project.clients === "object"
+                                ? Object.entries(project.clients).map(([name, url], idx) => (
+                                    <span key={idx}>
+                                      {url ? (
+                                        <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-600 hover:underline"
+                                      >
+                                        {name}
+                                      </a>
+                                      ) : (
+                                        name  
+                                      )
+                                      }
+                                      {idx < Object.keys(project.clients).length - 1 && ", "}
+                                    </span>
+                                  ))
+                                  // @ts-ignore
+                                : project.clients.join(", ")}
                             </div>
                           )}
-                          {project.media && project.media.length > 0 && (
+                          {project.media && (
                             <div>
-                              <strong>Медиа:</strong> {project.media.join(", ")}
+                              <strong>Медиа:</strong>{" "}
+                              {typeof project.media === "object"
+                                ? Object.entries(project.media).map(([name, url], idx) => (
+                                    <span key={idx}>
+                                      <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-blue-600 hover:underline"
+                                      >
+                                        {name}
+                                      </a>
+                                      {idx < Object.keys(project.media).length - 1 && ", "}
+                                    </span>
+                                  ))
+                                  // @ts-ignore
+                                : project.media.join(", ")}
                             </div>
                           )}
                           {project.results && project.results.length > 0 && (
@@ -447,7 +518,13 @@ const Portfolio = () => {
                     {project.link && (
                       <div className="text-sm text-blue-600 flex items-center">
                         <ExternalLink className="w-4 h-4 mr-1" />
-                        {project.link}
+                        <a
+                          href={project.link.replace(/^@/, 'https://t.me/')}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.link}
+                        </a>
                       </div>
                     )}
                   </CardContent>

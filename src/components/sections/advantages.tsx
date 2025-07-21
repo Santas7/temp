@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, Zap, DollarSign } from "lucide-react";
 
-const Advantages = () => {
+const Advantages = ({prefixBg}: {prefixBg: string}) => {
   const advantages = [
     {
       icon: <Target className="w-8 h-8" />,
@@ -24,7 +24,7 @@ const Advantages = () => {
   ];
 
   return (
-    <section className="py-32 px-4 section-fade bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section className={`py-32 px-4  ${prefixBg}`}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -49,7 +49,7 @@ const Advantages = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="glass-strong rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300"
+              className="rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300 border-8 border-gray-100"
             >
               <div className={`w-16 h-16 ${advantage.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
                 {advantage.icon}

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
-const Cooperation = () => {
+const Cooperation = ({prefixBg}: {prefixBg: string}) => {
   const formats = [
     "Проектная работа",
     "Абонентское обслуживание",
@@ -10,7 +10,7 @@ const Cooperation = () => {
   ];
 
   return (
-    <section className="py-32 px-4 section-fade">
+    <section className={`py-32 px-4 ${prefixBg}`}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

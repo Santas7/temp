@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
+
+import ImageLogo from "@assets/logo.png"
 
 const Header = () => {
   const [location] = useLocation();
@@ -23,9 +24,7 @@ const Header = () => {
       <header className="fixed top-5 left-5 right-5 z-50 glass-effect rounded-full px-8 py-5 shadow-xl">
         <div className="flex justify-between items-center">
           <Link href="/">
-            <h1 className="text-2xl font-black text-gray-800 dark:text-gray-200 cursor-pointer hover:text-gray-600 dark:hover:text-gray-400 transition-colors">
-              LLM-tech
-            </h1>
+            <img src={ImageLogo} alt="Logo" className="h-8 w-auto" />
           </Link>
           
           <nav className="hidden md:flex space-x-6">
@@ -34,7 +33,7 @@ const Header = () => {
                 <div className={`nav-hover px-4 py-2 rounded-xl cursor-pointer transition-all ${
                   location === item.href 
                     ? 'bg-white text-gray-900 dark:text-gray-900' 
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-white hover:text-gray-900 dark:hover:text-gray-900 hover:rounded-xl'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-white hover:text-black dark:hover:text-black hover:rounded-xl'
                 }`}>
                   {item.label}
                 </div>
@@ -47,7 +46,7 @@ const Header = () => {
               <Phone className="w-5 h-5" />
               <span className="font-medium">+7 927 203-58-62</span>
             </div>
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <Button asChild size="sm" className="hidden sm:flex bg-blue-500 hover:bg-blue-600 text-white rounded-xl">
               <a href="https://t.me/xtrueman" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 mr-2" />
@@ -70,9 +69,10 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
+       <div className="fixed inset-0 z-40 md:hidden ">
+
           <div className="fixed inset-0 bg-black/50 mobile-menu-overlay" onClick={toggleMenu} />
-          <div className="fixed top-24 left-5 right-5 glass-strong rounded-2xl p-6 shadow-xl mobile-menu-content">
+          <div className="fixed top-24 left-5 right-5 glass-strong rounded-2xl p-6 shadow-xl mobile-menu-content mt-5">
             <nav className="space-y-2">
               {navigationItems.map((item) => (
                 <Link key={item.href} href={item.href}>

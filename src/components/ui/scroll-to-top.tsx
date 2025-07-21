@@ -30,11 +30,13 @@ export const ScrollToTop = () => {
   return (
     <Button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full glass-effect hover:bg-white/20 transition-all duration-300 hover:scale-110 shadow-lg"
+      className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-black text-white hover:bg-gray-800 transition-all duration-300 hover:scale-110 shadow-lg"
       size="sm"
     >
       <ChevronUp className="w-5 h-5" />
       <span className="sr-only">Scroll to top</span>
     </Button>
+
+
   );
 };

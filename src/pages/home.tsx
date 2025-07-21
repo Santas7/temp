@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import Specializations from "@/components/sections/specializations";
@@ -8,42 +7,31 @@ import Clients from "@/components/sections/clients";
 import Advantages from "@/components/sections/advantages";
 import Cooperation from "@/components/sections/cooperation";
 import Hiring from "@/components/sections/hiring";
+import CTA from "@/components/sections/cta";
+import TechStack from "@/components/sections/tech-stack";
 
 const Home = () => {
-  useEffect(() => {
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.section-fade').forEach(section => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
-      <Hero />
-      <About />
-      <Specializations />
-      <Founder />
-      <Projects />
-      <Clients />
-      <Advantages />
-      <Cooperation />
-      <Hiring />
-    </>
+    <Hero prefixBg="bg-gradient-to-b from-[#eceeee] to-[#f5f5f5]" />
+    <About prefixBg="bg-gradient-to-b from-[#f5f5f5] to-[#fafafa]" />
+    <Founder prefixBg="bg-gradient-to-b from-[#fafafa] to-[#ffffff]" />
+  
+    <Advantages prefixBg="bg-gradient-to-b from-[#ffffff] to-[#f7f7f7]" />
+    <Cooperation prefixBg="bg-gradient-to-b from-[#f7f7f7] to-[#f5f5f5]" />
+    <Specializations prefixBg="bg-gradient-to-b from-[#f5f5f5] to-[#fafafa]" />
+  
+    <Projects prefixBg="bg-gradient-to-b from-[#fafafa] to-[#eceeee]" />
+    <Clients prefixBg="bg-gradient-to-b from-[#eceeee] to-[#f5f5f5]" />
+    
+    <CTA prefixBg="bg-gradient-to-b from-[#f5eaff] to-[#e8d7ff]" />
+    
+    <TechStack prefixBg="bg-gradient-to-b from-[#e8d7ff] to-[#ffffff]" />
+    <Hiring prefixBg="bg-gradient-to-b from-[#ffffff] to-[#f5f5f5]" />
+  </>
+  
+
+
   );
 };
 
