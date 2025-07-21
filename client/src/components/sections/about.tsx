@@ -61,35 +61,31 @@ const About = ({ prefixBg }: { prefixBg: string }) => {
               в области ИИ или backend-разработки.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-              <div
-                className="
-                  bg-white/90 dark:bg-gray-700
-                  rounded-xl p-6
-                  shadow-sm
-                  hover:shadow-md
-                  hover:bg-white/95 dark:hover:bg-gray-600
-                  transition-shadow transition-colors duration-300
-                "
-              >
-                <p className="text-sm mb-3 text-gray-600 dark:text-gray-300">Работаем с:</p>
-                <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">декабря 2024</p>
-              </div>
-              <div
-                className="
-                  bg-white/90 dark:bg-gray-700
-                  rounded-xl p-6
-                  shadow-sm
-                  hover:shadow-md
-                  hover:bg-white/95 dark:hover:bg-gray-600
-                  transition-shadow transition-colors duration-300
-                "
-              >
-                <p className="text-sm mb-3 text-gray-600 dark:text-gray-300">Официально зарегистрированы:</p>
-                <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">15.07.2025</p>
-              </div>
+            
+            <div
+  className="
+    bg-white/90 dark:bg-gray-700
+    rounded-xl p-6
+    shadow-sm
+    hover:shadow-md
+    hover:bg-white/95 dark:hover:bg-gray-600
+    transition-shadow transition-colors duration-300
+    flex items-center gap-3
+  "
+>
+  {/* Мигающая точка */}
+  <span className="w-3 h-3 rounded-full bg-green-500 animate-ping relative">
+    <span className="absolute inset-0 rounded-full bg-green-500 opacity-75"></span>
+  </span>
+
+  {/* Текст */}
+  <p className="text-sm sm:text-base font-medium text-gray-900 dark:text-gray-100">
+    Работаем над коммерческими проектами с декабря 2024
+  </p>
+</div>
+
             </div>
-          </div>
+          
 
           {/* Разделитель */}
           <div className="hidden md:block w-[1px] bg-gray-300 dark:bg-gray-700 rounded mx-2" />

@@ -175,6 +175,66 @@ const Specializations = ({prefixBg}: {prefixBg: string}) => {
             </div>
           </div>
         </motion.div>
+        {/* Идеальные задачи */}
+<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="mt-20 max-w-4xl mx-auto bg-white/60 dark:bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl border-8 border-gray-100"
+>
+  <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+    Примеры идеальных задач для нас
+  </h3>
+
+  <div className="space-y-8">
+    {/* Автоматизация техподдержки */}
+    <div className="flex items-start gap-4">
+      <div className="bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300 p-3 rounded-xl">
+        <MessageCircle className="w-6 h-6" />
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
+          Автоматизация техподдержки
+        </h4>
+        <p className="text-gray-700 dark:text-gray-300">
+          ИИ, который грамотно отвечает на вопросы клиентов, имеет интеграции с внутренними системами заказчика, базами знаний, различными API и т.п.
+        </p>
+      </div>
+    </div>
+
+    {/* Обработка данных */}
+    <div className="flex items-start gap-4">
+      <div className="bg-teal-100 text-teal-600 dark:bg-teal-900 dark:text-teal-300 p-3 rounded-xl">
+        <BarChart3 className="w-6 h-6" />
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
+          Обработка данных
+        </h4>
+        <p className="text-gray-700 dark:text-gray-300">
+          Обработка данных любого рода (тексты, аудио, видео) и дальнейшая автоматизированная аналитика / бизнес-логика поверх анализа (с применением ИИ / ML и не только).
+        </p>
+      </div>
+    </div>
+
+    {/* Языки разработки */}
+    <div className="flex items-start gap-4">
+      <div className="bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 p-3 rounded-xl">
+        <Server className="w-6 h-6" />
+      </div>
+      <div>
+        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
+          Язык разработки
+        </h4>
+        <p className="text-gray-700 dark:text-gray-300">
+          В основном — <span className="font-semibold text-gray-900 dark:text-white">Python</span> + любые другие языки, если задача требует.
+        </p>
+      </div>
+    </div>
+  </div>
+</motion.div>
+
       </div>
     </section>
   );

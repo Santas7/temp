@@ -6,7 +6,7 @@ const Advantages = ({prefixBg}: {prefixBg: string}) => {
     {
       icon: <Target className="w-8 h-8" />,
       title: "Гибкость",
-      description: "Работаем по модели проекта, абонентского обслуживания или субподряда",
+      description: "Проектная работа, абонентское обслуживание или субподряд",
       color: "bg-blue-100 text-blue-600"
     },
     {
@@ -37,7 +37,7 @@ const Advantages = ({prefixBg}: {prefixBg: string}) => {
             Что нас отличает
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Почему клиенты выбирают именно нас
+            Мы предлагаем гибкие форматы сотрудничества с высокой скоростью реализации и конкурентными ценами
           </p>
         </motion.div>
 

@@ -24,7 +24,7 @@ const Header = () => {
       <header className="fixed top-5 left-5 right-5 z-50 glass-effect rounded-full px-8 py-5 shadow-xl">
         <div className="flex justify-between items-center">
           <Link href="/">
-            <img src={ImageLogo} alt="Logo" className="h-8 w-auto" />
+            <img src={ImageLogo} alt="Logo" className="h-10 w-auto" />
           </Link>
           
           <nav className="hidden md:flex space-x-6">

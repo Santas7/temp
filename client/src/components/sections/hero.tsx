@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Settings } from "lucide-react";
 
+
 // Анимированный заголовок
 const AnimatedTitle = ({ text }: { text: string }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,41 +17,12 @@ const AnimatedTitle = ({ text }: { text: string }) => {
   
 
   return (
-    <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight flex justify-center flex-wrap text-center text-[#111827]">
-      {text.split("").map((char, idx) => {
-        const isActive = idx === activeIndex;
-
-        return (
-          <motion.span
-            key={idx}
-            animate={
-              isActive
-                ? {
-                    textShadow: [
-                      "0 0 0px rgba(255,255,255,0)",
-                      "0 0 24px rgba(255,255,255,1)",   // Увеличили интенсивность
-                      "0 0 48px rgba(255,255,255,1)",   // Увеличили диаметр
-                      "0 0 24px rgba(255,255,255,0.8)",  // Уменьшили второй уровень
-                      "0 0 0px rgba(255,255,255,0)",
-                    ],
-                    color: "#ffffff", // Яркий белый цвет для активной буквы
-                  }
-                : {
-                    textShadow: "none",
-                    color: "#111827", // Тёмный цвет для неактивных букв
-                  }
-            }
-            transition={{
-              duration: 2.4, // Плавность анимации
-              ease: "easeInOut",
-            }}
-            className="inline-block"
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        );
-      })}
+    <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-6 leading-tight flex justify-center items-center gap-6 flex-wrap text-center text-[#111827]">
+      
+      <span>LLM technology</span>
     </h1>
+
+
   );
 };
 
@@ -93,50 +65,7 @@ const Hero = ({ prefixBg }: { prefixBg: string }) => {
           AI-агентах и системах распознавания речи.
         </p>
 
-        {/* Форма */}
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-4"> {/* Уменьшил mb-10 на mb-4 */}
-        <div className="flex items-center bg-white rounded-[40px] shadow-lg px-6 py-4 w-full border border-8 border-gray-100 transition-all duration-300 focus-within:ring-2 ">
-
-    <input
-      type="text"
-      placeholder="Опишите задачу или оставьте контакт..."
-      value={idea}
-      onChange={(e) => setIdea(e.target.value)}
-      className="flex-1 min-w-0 bg-transparent outline-none text-base sm:text-lg text-gray-900 placeholder-gray-500"
-    />
-    <button
-      type="submit"
-      className="ml-4 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#5B3EFF] hover:bg-[#4a32d1] transition-all flex items-center justify-center"
-    >
-      <motion.span
-        className="text-white text-xl sm:text-2xl select-none"
-        initial={{ rotateY: 0 }}
-        animate={{ rotateY: 360 }}
-        transition={{
-          repeat: Infinity,
-          repeatDelay: 3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-      >
-        ✦
-      </motion.span>
-    </button>
-  </div>
-</form>
-
-{/* Блок с кнопками запросов */}
-<div className="flex flex-wrap justify-start gap-3 max-w-2xl mx-auto mb-10 mt-0">
-  {popularQueries.map((query, idx) => (
-    <button
-      key={idx}
-      onClick={() => setIdea("Здравствуйте! Мне " + query + ".")}
-      className="bg-white text-gray-900 text-sm sm:text-base font-medium px-4 py-2 rounded-full hover:bg-gray-200 transition-all"
-    >
-      {query}
-    </button>
-  ))}
-</div>
+     
 
 
         {/* CTA */}

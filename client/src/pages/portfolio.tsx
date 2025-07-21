@@ -37,6 +37,7 @@ import samokatWhite from "@assets/brands/samokat-white.png";
 import screenstructor from "@assets/brands/screenstructor.png";
 import ssauBlack from "@assets/brands/ssau-black.png";
 import tbBlack from "@assets/brands/tb-black.png";
+import Clients from "@/components/sections/clients";
 
 const Portfolio = () => {
   useEffect(() => {
@@ -316,142 +317,134 @@ const Portfolio = () => {
             Проекты реализованные или реализуемые в интересах заказчиков
           </h2>
           <div className="space-y-8">
-            {commercialProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-              >
-                <Card className="project-card glass-strong rounded-2xl shadow-lg">
-                  <CardContent className="p-0">
-                    <div className="grid lg:grid-cols-2 gap-6">
-                      {/* Images */}
-                      <div className="p-6">
-                        {project.images && project.images.length > 0 && (
-                          <Carousel images={project.images} className="mb-4" />
-                        )}
-                      </div>
+  {commercialProjects.map((project, index) => (
+    <motion.div
+      key={project.id}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+    >
+      <Card className="project-card  rounded-2xl shadow-lg border-8 border-gray-100">
+        <CardContent className="p-0">
+          <div className="flex flex-col gap-6"> {/* Изменено на flex-col для вертикальной компоновки */}
+            {/* Content */}
+            <div className="p-6">
+              <div className="flex items-start justify-between mb-4">
+                <div
+                  className={`w-14 h-14 ${project.color} rounded-xl flex items-center justify-center mb-4`}
+                >
+                  {project.icon}
+                </div>
+                <Badge
+                  variant={
+                    project.status.includes("Завершен")
+                      ? "default"
+                      : project.status.includes("MVP")
+                      ? "secondary"
+                      : "outline"
+                  }
+                >
+                  {project.status}
+                </Badge>
+              </div>
 
-                      {/* Content */}
-                      <div className="p-6">
-                        <div className="flex items-start justify-between mb-4">
-                          <div
-                            className={`w-14 h-14 ${project.color} rounded-xl flex items-center justify-center mb-4`}
-                          >
-                            {project.icon}
-                          </div>
-                          <Badge
-                            variant={
-                              project.status.includes("Завершен")
-                                ? "default"
-                                : project.status.includes("MVP")
-                                ? "secondary"
-                                : "outline"
-                            }
-                          >
-                            {project.status}
-                          </Badge>
-                        </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                {project.title}
+              </h3>
+              <p className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg">
+                {project.description}
+              </p>
+              <p className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg">
+                {project.additionalDescription}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.technologies.map((tech, techIndex) => (
+                  <Badge
+                    key={techIndex}
+                    variant="outline"
+                    className="text-xs"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
 
-                        <h3 className="text-2xl font-bold text-gray-800 mb-3">
-                          {project.title}
-                        </h3>
-                        <p
-  className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg"
->
-  {project.description}
-</p>
-<p
-  className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg"
->
-  {project.additionalDescription}
-</p>
-                        <div className="flex flex-wrap gap-2 mb-6">
-                          {project.technologies.map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              variant="outline"
-                              className="text-xs"
+              <div className="space-y-2 text-sm text-gray-500">
+                {project.clients && (
+                  <div>
+                    <strong>Клиенты:</strong>{" "}
+                    {typeof project.clients === "object"
+                      ? Object.entries(project.clients).map(([name, url], idx) => (
+                          <span key={idx}>
+                            {url ? (
+                              <a
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:underline"
+                              >
+                                {name}
+                              </a>
+                            ) : (
+                              name
+                            )}
+                            {idx < Object.keys(project.clients).length - 1 && ", "}
+                          </span>
+                        ))
+                      : project.clients.join(", ")}
+                  </div>
+                )}
+                {project.media && (
+                  <div>
+                    <strong>Медиа:</strong>{" "}
+                    {typeof project.media === "object"
+                      ? Object.entries(project.media).map(([name, url], idx) => (
+                          <span key={idx}>
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-blue-600 hover:underline"
                             >
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
+                              {name}
+                            </a>
+                            {idx < Object.keys(project.media).length - 1 && ", "}
+                          </span>
+                        ))
+                      : project.media.join(", ")}
+                  </div>
+                )}
+                {project.results && project.results.length > 0 && (
+                  <div>
+                    <strong>Результаты:</strong>
+                    <ul className="list-disc pl-5">
+                      {project.results.map((result, idx) => (
+                        <li key={idx}>{result}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {project.examples && project.examples.length > 0 && (
+                  <div>
+                    <strong>Примеры запросов:</strong>{" "}
+                    {`"${project.examples.join('", "')}"`}
+                  </div>
+                )}
+              </div>
+            </div>
 
-                        <div className="space-y-2 text-sm text-gray-500">
-                        
-                          {project.clients && (
-                            <div>
-                              <strong>Клиенты:</strong>{" "}
-                              {typeof project.clients === "object"
-                                ? Object.entries(project.clients).map(([name, url], idx) => (
-                                    <span key={idx}>
-                                      {url ? (
-                                        <a
-                                        href={url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-blue-600 hover:underline"
-                                      >
-                                        {name}
-                                      </a>
-                                      ) : (
-                                        name  
-                                      )
-                                      }
-                                      {idx < Object.keys(project.clients).length - 1 && ", "}
-                                    </span>
-                                  ))
-                                  // @ts-ignore
-                                : project.clients.join(", ")}
-                            </div>
-                          )}
-                          {project.media && (
-                            <div>
-                              <strong>Медиа:</strong>{" "}
-                              {typeof project.media === "object"
-                                ? Object.entries(project.media).map(([name, url], idx) => (
-                                    <span key={idx}>
-                                      <a
-                                        href={url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-blue-600 hover:underline"
-                                      >
-                                        {name}
-                                      </a>
-                                      {idx < Object.keys(project.media).length - 1 && ", "}
-                                    </span>
-                                  ))
-                                  // @ts-ignore
-                                : project.media.join(", ")}
-                            </div>
-                          )}
-                          {project.results && project.results.length > 0 && (
-                            <div>
-                              <strong>Результаты:</strong>
-                              <ul className="list-disc pl-5">
-                                {project.results.map((result, idx) => (
-                                  <li key={idx}>{result}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                          {project.examples && project.examples.length > 0 && (
-                            <div>
-                              <strong>Примеры запросов:</strong>{" "}
-                              {`"${project.examples.join('", "')}"`}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+            {/* Images */}
+            <div className="p-6">
+              {project.images && project.images.length > 0 && (
+                <Carousel images={project.images} className="mb-4" />
+              )}
+            </div>
           </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  ))}
+</div>
         </motion.div>
 
         {/* Техно-демо проекты */}
@@ -472,7 +465,7 @@ const Portfolio = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
               >
-                <Card className="project-card glass-strong rounded-2xl shadow-lg">
+                <Card className="project-card border-8 border-gray-100 rounded-2xl shadow-lg">
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div
@@ -534,55 +527,7 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <motion.div
-  initial={{ opacity: 0, y: 50 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.6 }}
-  className="glass-effect rounded-2xl p-8 shadow-lg"
->
-  <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
-    Наши клиенты
-  </h2>
-
-  <div className="overflow-hidden">
-    <motion.div
-      className="flex"
-      animate={{ x: ['0%', '-50%'] }}
-      transition={{
-        x: {
-          repeat: Infinity,
-          repeatType: 'loop',
-          duration: 20,
-          ease: 'linear',
-        },
-      }}
-    >
-      <div className="flex flex-nowrap gap-8 px-4">
-        {[
-          antantsBlack,
-          lunettes,
-          samokatWhite,
-          screenstructor,
-          ssauBlack,
-          tbBlack,
-          antantsBlack,
-          lunettes,
-          samokatWhite,
-          screenstructor,
-          ssauBlack,
-          tbBlack,
-        ].map((logo, index) => (
-          <img
-            key={index}
-            src={logo}
-            alt="Client Logo"
-            className="h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-          />
-        ))}
-      </div>
-    </motion.div>
-  </div>
-</motion.div>
+        <Clients/>
       </div>
     </div>
   );
