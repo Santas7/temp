@@ -1,0 +1,451 @@
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Group,
+  Text,
+  Title,
+  TextInput,
+  rem,
+  Paper,
+  Divider,
+} from '@mantine/core';
+import { useState } from 'react';
+import { TbMessage2Share, TbPhoneCall } from 'react-icons/tb';
+import { motion } from 'framer-motion';
+import AboutSection from './components/AboutSection';
+import SpecializationsAndFounder from './components/SpecializationsAndFounder';
+
+function App() {
+  const [idea, setIdea] = useState('');
+
+  return (
+    <>
+      {/* Fixed Glass Header */}
+      <div style={{ position: 'relative', height: '100px', marginTop: '20px' }}>
+        <Box
+          component="header"
+          style={{
+            position: 'fixed',
+            top: '20px',
+            left: '20px',
+            right: '20px',
+            zIndex: 9999,
+            padding: '20px 32px',
+            borderRadius: '48px',
+            background: 'rgba(255, 255, 255, 0.15)',
+            backgroundImage: 'linear-gradient(120deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+          }}
+        >
+          <Flex justify="space-between" align="center" wrap="wrap" gap="md">
+            <Title order={2} fw={900}>AIDev</Title>
+
+            <Group gap="md" mx="auto">
+              {['Главная', 'Проекты', 'Вакансии'].map((item) => (
+                <Box
+                  key={item}
+                  px="md"
+                  py={8}
+                  style={{
+                    borderRadius: rem(16),
+                    cursor: 'pointer',
+                    transition: 'background 0.2s',
+                  }}
+                  className="nav-hover"
+                >
+                  <Text size="md">{item}</Text>
+                </Box>
+              ))}
+            </Group>
+
+            <Group gap="sm">
+              <Group gap={4}>
+                <TbPhoneCall size={18} />
+                <Text fw={500}>+7 927 203-58-62</Text>
+              </Group>
+              <Button variant="light" color="blue" radius="xl" size="sm">
+                Написать в Telegram
+              </Button>
+            </Group>
+          </Flex>
+        </Box>
+      </div>
+
+      {/* Hero */}
+      <Container mt={20} size="lg" py={100} style={{ textAlign: 'center' }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title order={1} size={48} fw={800} mb="lg">
+            Разработка ИИ-решений и backend для малого и среднего бизнеса
+          </Title>
+
+          <Text size="xl" c="dimmed" mb="xl" style={{ maxWidth: 760, margin: '0 auto' }}>
+            Специализируемся на создании решений на базе NLP, LLM, AI-агентов и Speech-to-Text.
+            Можем решить для вас почти любую задачу в области ИИ или backend-разработки.
+          </Text>
+
+          <Flex
+            justify="center"
+            align="center"
+            gap="sm"
+            p="lg"
+            bg="white"
+            style={{
+              borderRadius: rem(32),
+              boxShadow: '0 2px 20px rgba(0, 0, 0, 0.05)',
+              maxWidth: 700,
+              margin: '0 auto',
+            }}
+            mb="xl"
+          >
+            <TextInput
+              placeholder="Опишите задачу или оставьте контакт..."
+              value={idea}
+              onChange={(e) => setIdea(e.currentTarget.value)}
+              size="lg"
+              radius="md"
+              w="100%"
+            />
+            <Button size="lg" radius="md" variant="light" color="violet" px="lg">
+              <TbMessage2Share size={24} />
+            </Button>
+          </Flex>
+
+          <Group justify="center" gap="md" wrap="wrap">
+            <Button size="lg" variant="filled" color="dark">
+              Обсудить проект
+            </Button>
+            <Button size="lg" variant="outline" color="gray">
+              Посмотреть проекты
+            </Button>
+          </Group>
+        </motion.div>
+      </Container>
+
+      {/* О компании */}
+      <AboutSection/>
+      <SpecializationsAndFounder />
+      {/* Hover style for nav */}
+      <style>{`
+        .nav-hover:hover {
+          background: rgba(0, 0, 0, 0.05);
+        }
+      `}</style>
+    </>
+  );
+}
+
+export default App;
+
+import {
+  Container,
+  Title,
+  Text,
+  Paper,
+  Grid,
+  Avatar,
+  List,
+  ThemeIcon,
+  Box,
+  Center,
+  Stack,
+} from '@mantine/core';
+import { motion } from 'framer-motion';
+import { FaCheck, FaTimes, FaRobot, FaComments, FaChartBar, FaServer } from 'react-icons/fa';
+
+import ImageOwner from '../assets/owner.png';
+
+const FadeIn = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay }}
+    viewport={{ once: true, amount: 0.4 }}
+  >
+    {children}
+  </motion.div>
+);
+
+const specializations = [
+  {
+    icon: <FaRobot size={28} />, bg: 'blue',
+    title: 'Искусственный интеллект и LLM',
+    desc: 'Автоматизация бизнес-процессов с применением больших языковых моделей и других ИИ-технологий',
+  },
+  {
+    icon: <FaComments size={28} />, bg: 'violet',
+    title: 'Интеллектуальные чат-боты',
+    desc: 'AI-агенты для автоматизации поддержки клиентов или внутренней службы поддержки',
+  },
+  {
+    icon: <FaChartBar size={28} />, bg: 'teal',
+    title: 'Обработка данных',
+    desc: 'Автоматизированный анализ текста, аудио, видео и принятие решений на основе данных',
+  },
+  {
+    icon: <FaServer size={28} />, bg: 'orange',
+    title: 'Backend-разработка',
+    desc: 'Любые серверные решения с нетривиальной логикой, интеграцию с внешними системами',
+  },
+];
+
+export default function SpecializationsAndFounder() {
+  return (
+    <Container size="lg" py={80}>
+      {/* Специализации */}
+      <FadeIn>
+        <Title order={2} size={36} ta="center" mb={50}>
+          Наши специализации
+        </Title>
+      </FadeIn>
+
+      <Grid gutter={30} mb={80}>
+        {specializations.map((item, idx) => (
+          <Grid.Col span={6} key={item.title} style={{ display: 'flex' }}>
+            <FadeIn delay={idx * 0.1} style={{ flexGrow: 1 }}>
+              <Paper
+                p="lg"
+                radius="xl"
+                shadow="md"
+                withBorder
+                style={{
+                  flexGrow: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <Box mb="md">
+                  <ThemeIcon variant="light" radius="xl" size={60} color={item.bg}>
+                    <Center>{item.icon}</Center>
+                  </ThemeIcon>
+                </Box>
+                <Title order={4} mb="xs">{item.title}</Title>
+                <Text c="dimmed">{item.desc}</Text>
+              </Paper>
+            </FadeIn>
+          </Grid.Col>
+        ))}
+      </Grid>
+
+      {/* Основатель */}
+<FadeIn>
+  <Paper
+    p={40}
+    radius="xl"
+    shadow="lg"
+    withBorder
+    mb={80}
+    style={{
+      backgroundColor: '#f9f9fb',
+    }}
+  >
+    <Grid gutter={40} align="center">
+      <Grid.Col span={{ base: 12, md: 4 }}>
+        <Center>
+          <Avatar
+            src={ImageOwner}
+            alt="Валерий Студенников"
+            size={180}
+            radius="xl"
+            styles={{ root: { boxShadow: '0 0 0 4px white, 0 4px 20px rgba(0,0,0,0.1)' } }}
+          />
+        </Center>
+      </Grid.Col>
+
+      <Grid.Col span={{ base: 12, md: 8 }}>
+        <Stack gap={16}>
+          <Title order={2} size={30}>
+            Основатель — Валерий Студенников
+          </Title>
+          <Text size="lg" c="dimmed">
+            Со-основатель, ex-CTO и руководитель разработки REG.RU
+          </Text>
+          <Text size="lg" c="dimmed">
+            Создал и руководил отделом анализа данных в REG.RU
+          </Text>
+          <Text size="lg" c="dimmed">
+            3,5 года преподавал IT-дисциплины в Самарском университете
+          </Text>
+          <Text size="lg" c="dimmed">
+            В 2024 году запустил <b>LLM-tech</b> с фокусом на AI-решения
+          </Text>
+        </Stack>
+      </Grid.Col>
+    </Grid>
+  </Paper>
+</FadeIn>
+
+
+      {/* Заказы */}
+      <FadeIn>
+        <Title order={2} size={36} ta="center" mb={30}>
+          Какие заказы нам интересны
+        </Title>
+
+        <Grid gutter={40} mt={60}>
+  <Grid.Col span={{ base: 12, md: 6 }}>
+    <FadeIn delay={0.1}>
+      <Paper
+        p={40}
+        radius="xl"
+        shadow="lg"
+        withBorder
+        h="100%"
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          minHeight: 360,
+        }}
+      >
+        <Stack gap={28}>
+          <Title order={3} size="h3" c="green">
+            Нам подходят
+          </Title>
+          <List
+            spacing="xl"
+            size="lg"
+            icon={
+              <ThemeIcon color="green" variant="light" radius="xl" size={36}>
+                <FaCheck size={18} />
+              </ThemeIcon>
+            }
+          >
+            <List.Item>Фокус на ИИ (ML, LLM) и/или backend</List.Item>
+            <List.Item>Любые чат-боты (Telegram или web)</List.Item>
+            <List.Item>Frontend как дополнение к backend</List.Item>
+            <List.Item>Бюджет от 300k рублей</List.Item>
+          </List>
+        </Stack>
+      </Paper>
+    </FadeIn>
+  </Grid.Col>
+
+  <Grid.Col span={{ base: 12, md: 6 }}>
+    <FadeIn delay={0.2}>
+      <Paper
+        p={40}
+        radius="xl"
+        shadow="lg"
+        withBorder
+        h="100%"
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          minHeight: 360,
+        }}
+      >
+        <Stack gap={28}>
+          <Title order={3} size="h3" c="red">
+            Нам не подходят
+          </Title>
+          <List
+            spacing="xl"
+            size="lg"
+            icon={
+              <ThemeIcon color="red" variant="light" radius="xl" size={36}>
+                <FaTimes size={18} />
+              </ThemeIcon>
+            }
+          >
+            <List.Item>Задачи «сделать красиво» без сложной логики</List.Item>
+            <List.Item>Бухгалтерия, 1С, SAP, enterprise-интеграции</List.Item>
+            <List.Item>Заказы с бюджетом менее 300k</List.Item>
+          </List>
+        </Stack>
+      </Paper>
+    </FadeIn>
+  </Grid.Col>
+</Grid>
+
+
+      </FadeIn>
+    </Container>
+  );
+}
+import {
+  Box,
+  Container,
+  Flex,
+  Text,
+  Title,
+  Paper,
+  Divider,
+  rem,
+} from '@mantine/core';
+import { motion } from 'framer-motion';
+
+const FadeInUp = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay }}
+    viewport={{ once: true, amount: 0.4 }}
+  >
+    {children}
+  </motion.div>
+);
+
+function AboutSection() {
+  return (
+    <Container size="lg" py={120}>
+      <FadeInUp>
+        <Title order={2} size={40} ta="center" fw={700} mb="xl">
+          О компании
+        </Title>
+      </FadeInUp>
+
+      <FadeInUp delay={0.1}>
+        <Paper
+          radius="xl"
+          p="xl"
+          shadow="lg"
+          withBorder
+          style={{
+            background: 'rgba(255,255,255,0.6)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
+            border: '1px solid rgba(255,255,255,0.3)',
+          }}
+        >
+          <Flex direction="column" gap="xl">
+            <Text size="xl" lh={1.8}>
+              <strong>LLM-tech</strong> — команда энтузиастов искусственного интеллекта и backend-разработки.
+              Мы верим, что технологии ИИ способны улучшать мир и повышать эффективность бизнеса,
+              поэтому создаём решения на базе NLP, LLM, AI-агентов и Speech-to-Text.
+            </Text>
+
+            <Text size="xl" lh={1.8}>
+              Мы закрываем весь цикл: от архитектуры backend-систем до интерфейсов — web, mobile, Telegram-боты.
+            </Text>
+
+            <Divider my="md" />
+
+            <Flex gap="xl" direction={{ base: 'column', sm: 'row' }}>
+              <Box>
+                <Text c="dimmed" size="sm" mb={4}>Работаем с:</Text>
+                <Text fw={600} size="lg">сентября 2024</Text>
+              </Box>
+              <Box>
+                <Text c="dimmed" size="sm" mb={4}>Официально зарегистрированы:</Text>
+                <Text fw={600} size="lg">15.07.2025</Text>
+              </Box>
+            </Flex>
+          </Flex>
+        </Paper>
+      </FadeInUp>
+    </Container>
+  );
+}
+
+export default AboutSection;
