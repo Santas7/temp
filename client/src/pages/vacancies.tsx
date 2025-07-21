@@ -134,28 +134,28 @@ const Vacancies = () => {
             <FaLightbulb className="text-blue-500 mr-2 text-3xl" /> О чём наши проекты
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4">
+            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4 border-8 border-gray-100">
               <FaRobot className="text-indigo-500 text-2xl" />
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">Машинное обучение</h3>
                 <p className="text-gray-600">Большие языковые модели (LLM)</p>
               </div>
             </div>
-            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4">
+            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4 border-8 border-gray-100">
               <FaComment className="text-yellow-500 text-2xl" />
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">AI-агенты</h3>
                 <p className="text-gray-600">Чат-боты с интеллектом</p>
               </div>
             </div>
-            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4">
+            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4 border-8 border-gray-100">
               <FaChartBar className="text-pink-500 text-2xl" />
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">Обработка данных</h3>
                 <p className="text-gray-600">Тексты, аудио, видео</p>
               </div>
             </div>
-            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4">
+            <div className="bg-white/60 rounded-2xl p-6 shadow-sm flex items-center space-x-4 border-8 border-gray-100">
               <FaCog className="text-green-500 text-2xl" />
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">Интересный backend</h3>
@@ -183,7 +183,7 @@ const Vacancies = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <Card className="glass-strong rounded-2xl shadow-lg">
+                <Card className=" rounded-2xl shadow-lg border-8 border-gray-100">
                   <CardContent className="p-8">
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center space-x-4">

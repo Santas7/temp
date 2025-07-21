@@ -391,6 +391,7 @@ const Portfolio = () => {
                             {idx < Object.keys(project.clients).length - 1 && ", "}
                           </span>
                         ))
+                        // @ts-ignore
                       : project.clients.join(", ")}
                   </div>
                 )}
@@ -411,6 +412,7 @@ const Portfolio = () => {
                             {idx < Object.keys(project.media).length - 1 && ", "}
                           </span>
                         ))
+                        // @ts-ignore
                       : project.media.join(", ")}
                   </div>
                 )}

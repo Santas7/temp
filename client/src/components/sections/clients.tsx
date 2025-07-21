@@ -1,5 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 import antantsBlack from "@assets/brands/antants-black.png";
 import lunettes from "@assets/brands/lunettes.png";
 import samokatWhite from "@assets/brands/samokat-white.png";
@@ -14,33 +13,6 @@ const Clients = ({ prefixBg }: { prefixBg: string }) => {
     { name: "Самарский университет", industry: "Образование", logo: ssauBlack },
     { name: "Бизнес-клуб Атланты", industry: "Бизнес-сообщество", logo: antantsBlack },
   ];
-
-  const controls = useAnimation();
-
-  useEffect(() => {
-    let isMounted = true;
-  
-    const loopAnimation = async () => {
-      while (isMounted) {
-        await controls.start({
-          x: "-100%",
-          transition: { duration: 30, ease: "linear" },
-        });
-  
-        // Only call set if component is still mounted
-        if (!isMounted) break;
-  
-        await controls.set({ x: 0 });
-      }
-    };
-  
-    loopAnimation();
-  
-    return () => {
-      isMounted = false;
-    };
-  }, [controls]);
-  
 
   return (
     <section className={`py-32 px-4 ${prefixBg}`}>
@@ -60,33 +32,28 @@ const Clients = ({ prefixBg }: { prefixBg: string }) => {
           </p>
         </motion.div>
 
-        {/* Ограниченная зона прокрутки */}
-        <div className="relative overflow-hidden max-w-full">
-          <motion.div
-            className="flex space-x-12 w-max"
-            animate={controls}
-          >
-            {[...clients, ...clients].map((client, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="min-w-[250px] glass-strong rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-24 h-16 mx-auto mb-6 flex items-center justify-center">
-                  <img
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    className="max-h-full w-auto object-contain"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{client.name}</h3>
-                <p className="text-gray-600">{client.industry}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+        {/* Статичный ряд клиентов */}
+        <div className="flex flex-wrap justify-center gap-8">
+          {clients.map((client, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="w-[250px] glass-strong rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300"
+            >
+              <div className="w-24 h-16 mx-auto mb-6 flex items-center justify-center">
+                <img
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  className="max-h-full w-auto object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{client.name}</h3>
+              <p className="text-gray-600">{client.industry}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
