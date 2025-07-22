@@ -1,5 +1,3 @@
-import Hero from "@/components/sections/hero";
-import About from "@/components/sections/about";
 import Specializations from "@/components/sections/specializations";
 import Founder from "@/components/sections/founder";
 import Projects from "@/components/sections/projects";
@@ -10,12 +8,12 @@ import Hiring from "@/components/sections/hiring";
 import CTA from "@/components/sections/cta";
 import TechStack from "@/components/sections/tech-stack";
 import Favorite from "@/components/sections/favorite";
+import Begin from "@/components/sections/begin";
 
 const Home = () => {
   return (
     <>
-      <Hero prefixBg="bg-gradient-to-b from-[#eceeee] to-[#f5f5f5]" />
-      <About prefixBg="bg-gradient-to-b from-[#f5f5f5] to-[#F2F2F2]" />
+      <Begin prefixBg="bg-gradient-to-b from-[#f5f5f5] to-[#F2F2F2]" />
       <Specializations prefixBg="bg-gradient-to-b from-[#F2F2F2] to-[#fafafa]" />
       <Founder prefixBg="bg-gradient-to-b from-[#fafafa] to-[#ffffff]" />
     
