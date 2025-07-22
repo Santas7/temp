@@ -52,7 +52,8 @@ const Founder = ({ prefixBg }: { prefixBg: string }) => {
               Основатель — Валерий Студенников
             </h3>
 
-            <ul className="list-disc pl-6 space-y-4 text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
+            <ul className="list-disc list-inside space-y-4 text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
+
               <li>
                 Со-основатель, ex-CTO и руководитель разработки{" "}
                 <a
@@ -77,9 +78,7 @@ const Founder = ({ prefixBg }: { prefixBg: string }) => {
                 </a>
               </li>
               <li>
-                Преподаватель IT-дисциплин в Самарском университете, создал
-                несколько авторских курсов, в том числе по управлению
-                разработкой ПО и анализу данных
+                Преподаватель IT-дисциплин в Самарском университете, создал несколько авторских курсов, включая «Управление разработкой ПО», «Культура разработки ПО» и «Инструменты анализа данных»
               </li>
               <li>
                  В 2024 году основал компанию LLM technology с фокусом на AI-решения и backend
