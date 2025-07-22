@@ -19,7 +19,7 @@ const Begin = ({ prefixBg }: { prefixBg: string }) => {
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Молодая IT-компания, специализирующаяся на заказной разработке высокотехнологичного ПО для малого и среднего бизнеса.
+            Мы и наша команда — молодая IT-компания, специализирующаяся на заказной разработке высокотехнологичного ПО для малого и среднего бизнеса.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ const Begin = ({ prefixBg }: { prefixBg: string }) => {
         >
           <div className="md:flex-[3] p-8 sm:p-10 rounded-3xl shadow-lg bg-white/70 dark:bg-gray-800/70 text-gray-700 dark:text-gray-300 backdrop-blur-md border-8 border-gray-100 transition-colors duration-500">
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-5 text-justify">
-              <strong className="dark:text-blue-400 text-blue-700">Мы — команда энтузиастов</strong> искусственного интеллекта и backend-разработки. Верим в силу технологий и их способность повышать эффективность бизнеса.
+              LLM technology — это команда энтузиастов искусственного интеллекта и backend-разработки. Верим в силу технологий и их способность повышать эффективность бизнеса.
             </p>
 
             <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6 text-justify">
