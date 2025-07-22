@@ -3,7 +3,8 @@ import {
   Cpu,
   Mic,
   MessageCircle,
-  Server
+  Server,
+  BarChart2
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -45,7 +46,9 @@ const Begin = ({ prefixBg }: { prefixBg: string }) => {
               <Feature icon={<Sparkles size={20} />} text="AI-агенты" />
               <Feature icon={<Mic size={20} />} text="Системы распознавания речи" />
               <Feature icon={<Server size={20} />} text="Backend любой сложности" />
+              <Feature icon={<BarChart2 size={20} />} text="Анализ и обработка данных" /> {/* 👈 Новый пункт */}
             </div>
+
           </div>
         </motion.div>
       </div>
