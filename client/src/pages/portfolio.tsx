@@ -76,11 +76,18 @@ const Portfolio = () => {
                         <h3 className="text-2xl font-bold text-gray-800 mb-3">
                           {project.title}
                         </h3>
-                        <p className="text-gray-600  mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg">
+                        <p className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg">
                           {project.description}
                         </p>
                         <p className="text-gray-600 mb-4 leading-relaxed bg-gradient-to-r from-gray-100 to-gray-300 p-4 rounded-lg">
                           {project.additionalDescription}
+                          {project.examples?.length > 0 && (
+                            <>
+                              <br />
+                              <strong>Примеры запросов:</strong>{" "}
+                              {`"${project.examples.join('", "')}"`}
+                            </>
+                          )}
                         </p>
 
                         <div className="flex flex-wrap gap-2 mb-6">
@@ -97,7 +104,7 @@ const Portfolio = () => {
 
                         <div className="space-y-2 text-base text-gray-600">
                           {project.clients && (
-                            <div >
+                            <div>
                               <strong>Клиенты:</strong>{" "}
                               {typeof project.clients === "object"
                                 ? Object.entries(project.clients).map(
@@ -121,7 +128,6 @@ const Portfolio = () => {
                                       </span>
                                     )
                                   )
-                                  
                                 : project.clients.join(", ")}
                             </div>
                           )}
@@ -159,13 +165,6 @@ const Portfolio = () => {
                                   <li key={idx}>{result}</li>
                                 ))}
                               </ul>
-                            </div>
-                          )}
-
-                          {project.examples?.length > 0 && (
-                            <div className="text-base">
-                              <strong>Примеры запросов:</strong>{" "}
-                              {`"${project.examples.join('", "')}"`}
                             </div>
                           )}
                         </div>
@@ -268,9 +267,8 @@ const Portfolio = () => {
             ))}
           </div>
         </motion.div>
-
-        <Clients prefixBg="" />
       </div>
+      <Clients prefixBg="" />
     </div>
   );
 };

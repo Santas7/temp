@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle, Menu, X } from "lucide-react";
+import { Phone, Send, Menu, X } from "lucide-react"; // заменили MessageCircle на Send
 
 const Header = () => {
   const [location] = useLocation();
@@ -63,7 +63,7 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
+                <Send className="w-4 h-4 mr-2" />
                 Telegram
               </a>
             </Button>
@@ -125,7 +125,7 @@ const Header = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle className="w-4 h-4 mr-2" />
+                  <Send className="w-4 h-4 mr-2" />
                   Написать в Telegram
                 </a>
               </Button>
