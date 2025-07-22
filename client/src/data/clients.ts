@@ -10,7 +10,7 @@ export const clients = [
   { name: "Транспорт будущего", industry: "Дроны и логистика", logo: tbBlack },
   { name: "Самокат", industry: "Доставка", logo: samokatWhite },
   { name: "Роскошное зрение", industry: "Медицина", logo: lunettes },
-  { name: "ScreenStructor", industry: "IT", logo: screencastBlock },
+  { name: "EdTech", industry: "IT", logo: screencastBlock },
   { name: "Самарский университет", industry: "Образование", logo: ssauBlack },
   { name: "Бизнес-клуб Атланты", industry: "Бизнес-сообщество", logo: antantsBlack },
 ];
