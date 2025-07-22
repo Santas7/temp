@@ -1,14 +1,6 @@
 import { Phone, MessageCircle, Mail } from "lucide-react";
 
 const Footer = () => {
-  const services = [
-    "Разработка ИИ-решений",
-    "Backend-разработка", 
-    "Чат-боты и AI-агенты",
-    "Анализ данных",
-    "Техническое консультирование"
-  ];
-
   return (
     <footer className="bg-gray-800 text-white py-16">
       <div className="max-w-6xl mx-auto px-4">
@@ -45,7 +37,13 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Услуги</h4>
             <ul className="space-y-2 text-gray-300">
-              {services.map((service, index) => (
+              {[
+    "Разработка ИИ-решений",
+    "Backend-разработка", 
+    "Чат-боты и AI-агенты",
+    "Анализ данных",
+    "Техническое консультирование"
+  ].map((service, index) => (
                 <li key={index}>{service}</li>
               ))}
             </ul>

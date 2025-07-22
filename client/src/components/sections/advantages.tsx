@@ -1,28 +1,8 @@
 import { motion } from "framer-motion";
-import { Target, Zap, DollarSign } from "lucide-react";
+
+import { advantages } from "@/data/advantages";
 
 const Advantages = ({prefixBg}: {prefixBg: string}) => {
-  const advantages = [
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Гибкость",
-      description: "Проектная работа, абонентское обслуживание или субподряд",
-      color: "bg-blue-100 text-blue-600"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Высокая скорость",
-      description: "Минимум времени от первого контакта до старта работ",
-      color: "bg-purple-100 text-purple-600"
-    },
-    {
-      icon: <DollarSign className="w-8 h-8" />,
-      title: "Цены ниже рынка",
-      description: "Приоритет — портфель успешных кейсов",
-      color: "bg-green-100 text-green-600"
-    }
-  ];
-
   return (
     <section className={`py-32 px-4  ${prefixBg}`}>
       <div className="max-w-6xl mx-auto">

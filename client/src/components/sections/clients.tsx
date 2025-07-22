@@ -1,19 +1,7 @@
 import { motion } from "framer-motion";
-import antantsBlack from "@assets/brands/antants-black.png";
-import lunettes from "@assets/brands/lunettes.png";
-import samokatWhite from "@assets/brands/samokat-white.png";
-import ssauBlack from "@assets/brands/ssau-black.png";
-import tbBlack from "@assets/brands/tb-black.png";
+import { clients } from "@/data/clients";
 
 const Clients = ({ prefixBg }: { prefixBg: string }) => {
-  const clients = [
-    { name: "Транспорт будущего", industry: "Дроны и логистика", logo: tbBlack },
-    { name: "Самокат", industry: "Доставка", logo: samokatWhite },
-    { name: "Роскошное зрение", industry: "Медицина", logo: lunettes },
-    { name: "Самарский университет", industry: "Образование", logo: ssauBlack },
-    { name: "Бизнес-клуб Атланты", industry: "Бизнес-сообщество", logo: antantsBlack },
-  ];
-
   return (
     <section className={`py-32 px-4 ${prefixBg}`}>
       <div className="max-w-6xl mx-auto">
@@ -28,7 +16,7 @@ const Clients = ({ prefixBg }: { prefixBg: string }) => {
             Наши клиенты
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Компании, которые доверяют нам свои проекты
+            Компании, которые доверяют нам свои проекты:
           </p>
         </motion.div>
 

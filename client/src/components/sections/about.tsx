@@ -1,13 +1,6 @@
 import { motion } from "framer-motion";
 import { FaRobot, FaChartLine, FaBrain, FaCogs, FaChartBar } from "react-icons/fa";
 
-const phrases = [
-  { text: "Мы создаём решения на базе ИИ.", icon: <FaRobot className="text-blue-500 text-2xl" /> },
-  { text: "Повышаем эффективность бизнеса.", icon: <FaChartLine className="text-blue-500 text-2xl" /> },
-  { text: "Искусственный интеллект в каждом проекте.", icon: <FaBrain className="text-blue-500 text-2xl" /> },
-  { text: "Автоматизация рутинных процессов.", icon: <FaCogs className="text-blue-500 text-2xl" /> },
-  { text: "Аналитика данных для точных решений.", icon: <FaChartBar className="text-blue-500 text-2xl" /> },
-];
 
 const About = ({ prefixBg }: { prefixBg: string }) => {
   return (
@@ -58,7 +51,7 @@ const About = ({ prefixBg }: { prefixBg: string }) => {
               "
             >
               {/* Мигающая точка */}
-              <span className="w-3 h-3 rounded-full bg-green-500 animate-ping relative">
+              <span className="w-3 h-3 rounded-full bg-green-500 relative">
                 <span className="absolute inset-0 rounded-full bg-green-500 opacity-75"></span>
               </span>
 
@@ -68,8 +61,6 @@ const About = ({ prefixBg }: { prefixBg: string }) => {
               </p>
             </div>
           </div>
-
-          
         </motion.div>
       </div>
     </section>

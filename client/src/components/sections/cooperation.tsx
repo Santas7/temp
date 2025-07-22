@@ -1,14 +1,9 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
-const Cooperation = ({prefixBg}: {prefixBg: string}) => {
-  const formats = [
-    "Проектная работа",
-    "Абонентское обслуживание",
-    "Субподряд",
-    "Техническое консультирование"
-  ];
+import { formats } from "@/data/formats";
 
+const Cooperation = ({prefixBg}: {prefixBg: string}) => {
   return (
     <section className={`py-32 px-4 ${prefixBg}`}>
       <div className="max-w-6xl mx-auto">
@@ -23,7 +18,7 @@ const Cooperation = ({prefixBg}: {prefixBg: string}) => {
             Форматы сотрудничества
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Выберите удобный для вас формат работы
+            Выберите удобный для вас формат работы:
           </p>
         </motion.div>
 

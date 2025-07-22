@@ -33,46 +33,30 @@ const Founder = ({prefixBg}: {prefixBg: string}) => {
           }}
         >
           {/* Обертка для изображения с анимацией свечения */}
-          <motion.div
+          <div
             className="relative w-56 h-56 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-gray-50 dark:border-gray-700"
-            animate={{
-              boxShadow: [
-                "0 0 10px 4px rgba(59, 130, 246, 0.6)",
-                "0 0 20px 10px rgba(59, 130, 246, 0.9)",
-                "0 0 10px 4px rgba(59, 130, 246, 0.6)",
-              ],
+            style={{
+              boxShadow: "0 0 10px 4px rgba(59, 130, 246, 0.6)",
             }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
+
             <img
               src={founderPhoto}
               alt="Валерий Студенников"
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </div>
 
           <div className="md:col-span-2 space-y-6">
             <h3 className="text-4xl font-extrabold text-blue-600 dark:text-blue-400">
               Основатель — Валерий Студенников
             </h3>
-            <div className="space-y-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed border-8 border-gray-100 dark:border-gray-700 p-6 rounded-[40px]">
-              <p className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">•</span>
-                Со-основатель, ex-CTO и руководитель разработки REG.RU
-              </p>
-              <p className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">•</span>
-                Создал и руководил отделом анализа данных в REG.RU
-              </p>
-              <p className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">•</span>
-                3,5 года преподавал IT-дисциплины в Самарском университете
-              </p>
-              <p className="flex items-start">
-                <span className="text-blue-500 mr-3 mt-1">•</span>
-                В 2024 году запустил LLM-tech с фокусом на AI-решения
-              </p>
-            </div>
+            <ul className="list-disc pl-6 space-y-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+              <li>Со-основатель, ex-CTO и руководитель разработки REG.RU</li>
+              <li>Создал и руководил отделом анализа данных в REG.RU</li>
+              <li>3,5 года преподавал IT-дисциплины в Самарском университете</li>
+              <li>В 2024 году запустил LLM-tech с фокусом на AI-решения</li>
+            </ul>
           </div>
         </motion.div>
       </div>

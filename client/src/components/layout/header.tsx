@@ -15,9 +15,7 @@ const Header = () => {
     { label: "Вакансии", href: "/vacancies" },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => {setIsMenuOpen(!isMenuOpen)};
 
   return (
     <>

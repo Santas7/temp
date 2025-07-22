@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
-import { Brain, MessageCircle, BarChart3, Server, Check, X } from "lucide-react";
+import {  MessageCircle, BarChart3, Server, Check, X } from "lucide-react";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa6";
 
 const Favorite = ({prefixBg}: {prefixBg: string}) => {
- 
-
   return (
     <section className={`py-20 px-4 ${prefixBg} `}>
       <motion.div
@@ -123,7 +121,7 @@ const Favorite = ({prefixBg}: {prefixBg: string}) => {
   className="mt-20 max-w-4xl mx-auto bg-white/60 dark:bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl border-8 border-gray-100"
 >
   <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-    Примеры идеальных задач для нас
+    Примеры идеальных задач для нас:
   </h3>
 
   <div className="space-y-8">
