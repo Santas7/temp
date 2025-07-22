@@ -13,7 +13,7 @@ const Begin = ({ prefixBg }: { prefixBg: string }) => {
     <section className={`pt-32 pb-12 px-6 sm:px-10 ${prefixBg}`}>
       <div className="max-w-6xl mx-auto text-center px-4 sm:px-8">
         {/* Hero Section */}
-        <div className="mb-12">
+        <div className="mb-12 mt-12">
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-[#111827] mb-4">
             LLM technology
           </h1>

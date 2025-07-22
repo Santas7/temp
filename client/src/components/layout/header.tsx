@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <Link href="/">
             <img
-              src="./logo.png"
+              src="./logo.svg"
               alt="Logo"
               className="h-10 w-auto"
               loading="eager"
@@ -49,8 +49,13 @@ const Header = () => {
 
           <div className="flex items-center space-x-4">
             <div className="hidden lg:flex items-center space-x-2 text-gray-700 dark:text-gray-300">
-              <Phone className="w-5 h-5" />
-              <span className="font-medium">+7 927 203-58-62</span>
+            <a
+  href="tel:+79272035862"
+  className="hidden lg:flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition"
+>
+  <Phone className="w-5 h-5" />
+  <span className="font-medium">+7 927 203-58-62</span>
+</a>
             </div>
 
             <Button
@@ -111,10 +116,16 @@ const Header = () => {
             </nav>
 
             <div className="border-t border-gray-200/50 mt-4 pt-4 space-y-3">
-              <div className="flex items-center justify-center space-x-2 text-gray-700 dark:text-gray-300">
-                <Phone className="w-4 h-4" />
-                <span className="font-medium text-sm">+7 927 203-58-62</span>
-              </div>
+            <div className="flex items-center justify-center space-x-2 text-gray-700 dark:text-gray-300">
+  <a
+    href="tel:+79272035862"
+    className="flex items-center space-x-2 hover:text-blue-600 transition"
+  >
+    <Phone className="w-4 h-4" />
+    <span className="font-medium text-sm">+7 927 203-58-62</span>
+  </a>
+</div>
+
               <Button
                 asChild
                 size="sm"
