@@ -6,9 +6,10 @@ import { createPortal } from "react-dom";
 interface CarouselProps {
   images: string[];
   className?: string;
+  imageClassName?: string;
 }
 
-export const Carousel = ({ images, className = "" }: CarouselProps) => {
+export const Carousel = ({ images, className = "", imageClassName = "object-contain max-h-[500px] w-full rounded-md" }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -65,7 +66,6 @@ export const Carousel = ({ images, className = "" }: CarouselProps) => {
       className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
       onClick={closeModal}
     >
-      {/* Кнопка закрытия - зафиксирована в правом верхнем углу экрана */}
       <Button
         variant="ghost"
         size="icon"
@@ -75,20 +75,17 @@ export const Carousel = ({ images, className = "" }: CarouselProps) => {
         <X className="w-6 h-6" />
       </Button>
 
-      {/* Контейнер для изображения с соотношением 16:9 */}
       <div 
         className="relative w-full max-w-5xl mx-auto"
         style={{ aspectRatio: '16/9', maxHeight: '70vh' }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Изображение */}
         <img
           src={images[currentIndex]}
           alt={`Project image ${currentIndex + 1} enlarged`}
           className="w-full h-full object-contain rounded-lg shadow-2xl"
         />
 
-        {/* Навигация только для множественных изображений - зафиксирована по бокам экрана */}
         {images.length > 1 && (
           <>
             <Button
@@ -112,10 +109,8 @@ export const Carousel = ({ images, className = "" }: CarouselProps) => {
         )}
       </div>
 
-      {/* Индикаторы точек и счетчик - зафиксированы внизу экрана */}
       {images.length > 1 ? (
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[10000] flex flex-col items-center space-y-3">
-          {/* Индикаторы точек */}
           <div className="flex space-x-2">
             {images.map((_, index) => (
               <button
@@ -127,14 +122,11 @@ export const Carousel = ({ images, className = "" }: CarouselProps) => {
               />
             ))}
           </div>
-
-          {/* Счетчик */}
           <div className="text-white text-sm font-medium bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">
             {currentIndex + 1} / {images.length}
           </div>
         </div>
       ) : (
-        /* Счетчик для единичного изображения */
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[10000] text-white text-sm font-medium bg-black/30 px-3 py-1 rounded-full backdrop-blur-sm">
           1 / 1
         </div>
@@ -144,51 +136,50 @@ export const Carousel = ({ images, className = "" }: CarouselProps) => {
 
   if (images.length === 1) {
     return (
-      <div className={`relative rounded-xl overflow-hidden ${className}`}>
-        <img
-          src={images[0]}
-          alt="Project image"
-          className="w-full h-64 object-cover"
-        />
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-3 right-3 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 transition-all rounded-full p-2"
-          onClick={openModal}
-        >
-          <Maximize2 className="w-5 h-5" />
-        </Button>
+      <div className={`relative rounded-xl overflow-hidden bg-gray-50 ${className}`}>
+        <div className="relative h-[500px] p-4"> {/* Увеличена высота и добавлены отступы */}
+          <img
+            src={images[0]}
+            alt="Project image"
+            className={imageClassName}
+          />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-6 right-6 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 rounded-full p-2.5" // Отступы от краев
+            onClick={openModal}
+          >
+            <Maximize2 className="w-5 h-5" />
+          </Button>
+        </div>
 
-        {/* Модальное окно через портал */}
         {isModalOpen && createPortal(<Modal />, document.body)}
       </div>
     );
   }
 
   return (
-    <div className={`relative rounded-xl overflow-hidden ${className}`}>
-      <div className="relative h-64 overflow-hidden">
+    <div className={`relative rounded-xl overflow-hidden bg-gray-50 ${className}`}>
+      <div className="relative h-[500px]"> {/* Увеличена высота и добавлены отступы */}
         <img
           src={images[currentIndex]}
           alt={`Project image ${currentIndex + 1}`}
-          className="w-full h-full object-cover transition-all duration-300"
+          className={`${imageClassName} transition-all duration-300`}
         />
 
-        {/* Кнопка увеличения */}
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-3 right-3 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 transition-all rounded-full p-2"
+          className="absolute top-6 right-6 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 rounded-full p-2.5" // Отступы от краев
           onClick={openModal}
         >
           <Maximize2 className="w-5 h-5" />
         </Button>
 
-        {/* Стрелки навигации */}
         <Button
           variant="ghost"
           size="icon"
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 transition-all rounded-full p-2"
+          className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 rounded-full p-2.5" // Отступы от краев
           onClick={goToPrevious}
         >
           <ChevronLeft className="w-5 h-5" />
@@ -197,14 +188,13 @@ export const Carousel = ({ images, className = "" }: CarouselProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 transition-all rounded-full p-2"
+          className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-md text-gray-800 hover:text-gray-900 rounded-full p-2.5" // Отступы от краев
           onClick={goToNext}
         >
           <ChevronRight className="w-5 h-5" />
         </Button>
       </div>
 
-      {/* Индикаторы точек */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
@@ -217,7 +207,6 @@ export const Carousel = ({ images, className = "" }: CarouselProps) => {
         ))}
       </div>
 
-      {/* Модальное окно через портал */}
       {isModalOpen && createPortal(<Modal />, document.body)}
     </div>
   );
