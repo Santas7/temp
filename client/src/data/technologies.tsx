@@ -19,19 +19,19 @@ import {
 } from "react-icons/si";
 import { Code } from "lucide-react";
 import type { ReactElement } from "react";
-import FastAPIIcon from "@assets/tech-icons/fastapi.png";
-import vLLMIcon from "@assets/tech-icons/vllm.png";
-import llamaCppIcon from "@assets/tech-icons/llamacpp.png";
-import hfIcon from "@assets/tech-icons/hf.png";
-import scikitLearnIcon from "@assets/tech-icons/scikitlearn.png";
-import nemoIcon from "@assets/tech-icons/nemo.png";
-import ollamaIcon from "@assets/tech-icons/ollama.png";
-import PEIcon from "@assets/tech-icons/pe.png";
-import langChainIcon from "@assets/tech-icons/langchain.png";
-import langGraphIcon from "@assets/tech-icons/langgraph.png";
-import n8nIcon from "@assets/tech-icons/n8n.png";
-import tokenizationIcon from "@assets/tech-icons/tokenization.png";
-import SQLIcon from "@assets/tech-icons/sql.png";
+import FastAPIIcon from "@assets/tech-icons/fastapi.webp";
+import vLLMIcon from "@assets/tech-icons/vllm.webp";
+import llamaCppIcon from "@assets/tech-icons/llamacpp.webp";
+import hfIcon from "@assets/tech-icons/hf.webp";
+import scikitLearnIcon from "@assets/tech-icons/scikitlearn.webp";
+import nemoIcon from "@assets/tech-icons/nemo.webp";
+import ollamaIcon from "@assets/tech-icons/ollama.webp";
+import PEIcon from "@assets/tech-icons/pe.webp";
+import langChainIcon from "@assets/tech-icons/langchain.webp";
+import langGraphIcon from "@assets/tech-icons/langgraph.webp";
+import n8nIcon from "@assets/tech-icons/n8n.webp";
+import tokenizationIcon from "@assets/tech-icons/tokenization.webp";
+import SQLIcon from "@assets/tech-icons/sql.webp";
 
 // Тип всех поддерживаемых технологий
 type Technology =
@@ -78,10 +78,10 @@ export const techIcons: Record<Technology, ReactElement> = {
   Flask: <SiFlask className="w-8 h-8 text-black" />,
   FastAPI: <img src={FastAPIIcon} alt="FastAPI" className="w-8 h-8" />,
   Swagger: <SiSwagger className="w-8 h-8 text-green-600" />,
-  SQL: <img src={SQLIcon} className="w-8 h-8 text-blue-800" />,
+  SQL: <img src={SQLIcon} alt="SQL" className="w-8 h-8 text-blue-800" />,
   PostgreSQL: <SiPostgresql className="w-8 h-8 text-blue-800" />,
   MySQL: <SiMysql className="w-8 h-8 text-blue-600" />,
-  "NoSQL": <SiMongodb className="w-8 h-8 text-green-500" />,
+  NoSQL: <SiMongodb className="w-8 h-8 text-green-500" />,
   vLLM: <img src={vLLMIcon} alt="vLLM" className="w-8 h-8" />,
   "llama.cpp": <img src={llamaCppIcon} alt="llama.cpp" className="w-8 h-8" />,
   HuggingFace: <img src={hfIcon} alt="HuggingFace" className="w-8 h-8" />,
@@ -92,7 +92,7 @@ export const techIcons: Record<Technology, ReactElement> = {
   Ollama: <img src={ollamaIcon} alt="Ollama" className="w-8 h-8" />,
   LangChain: <img src={langChainIcon} alt="LangChain" className="w-8 h-8" />,
   LangGraph: <img src={langGraphIcon} alt="LangGraph" className="w-8 h-8" />,
-  FAISS: <img src={n8nIcon} alt="FAISS" className="w-8 h-8" />, // Using n8n icon as placeholder
+  FAISS: <img src={n8nIcon} alt="FAISS" className="w-8 h-8" />,
   "Prompt Engineering": <img src={PEIcon} alt="Prompt Engineering" className="w-8 h-8" />,
   n8n: <img src={n8nIcon} alt="n8n" className="w-8 h-8" />,
   Tokenization: <img src={tokenizationIcon} alt="Tokenization" className="w-8 h-8" />,
