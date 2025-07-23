@@ -86,7 +86,7 @@ export const techIcons: Record<Technology, ReactElement> = {
   "llama.cpp": <img src={llamaCppIcon} alt="llama.cpp" className="w-8 h-8" />,
   HuggingFace: <img src={hfIcon} alt="HuggingFace" className="w-8 h-8" />,
   PyTorch: <SiPytorch className="w-8 h-8 text-red-500" />,
-  "Scikit-Learn": <img src={scikitLearnIcon} alt="Scikit-Learn" className="w-8 h-8" />,
+  "Scikit-Learn": <img src={scikitLearnIcon} alt="Scikit-Learn" className="h-auto w-auto max-w-[3rem]" />,
   Nemo: <img src={nemoIcon} alt="Nemo" className="w-8 h-8" />,
   Transformers: <Code className="w-8 h-8 text-orange-500" />,
   Ollama: <img src={ollamaIcon} alt="Ollama" className="w-8 h-8" />,
