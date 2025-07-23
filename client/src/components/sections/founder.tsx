@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Youtube, FileText } from "lucide-react";
-import founderPhoto from "@assets/owner_1752740690388.png";
+import founderPhoto from "@assets/owner_1752740690388.webp";
 
 const Founder = ({ prefixBg }: { prefixBg: string }) => {
   return (
