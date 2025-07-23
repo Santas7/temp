@@ -1,28 +1,29 @@
 import React from "react";
-import {
-  Rocket,
-  Stethoscope,
-  Network,
-  Monitor,
-  MessageCircle,
-  Brain,
-} from "lucide-react";
+import { Rocket, Stethoscope, Network, Monitor, MessageCircle, Brain } from "lucide-react";
 
-import postamatImage1 from "@assets/postamat1.png";
-import postamatImage2 from "@assets/postamat2.png";
-import postamatImage3 from "@assets/postamat3.png";
-import postamatImage4 from "@assets/postamat4.png";
-import postamatImage5 from "@assets/postamat5.png";
-import postamatImage6 from "@assets/postamat6.png";
+// Postamat images
+import postamat1 from "@assets/postamat1.webp";
+import postamat2 from "@assets/postamat2.webp";
+import postamat3 from "@assets/postamat3.webp";
+import postamat4 from "@assets/postamat4.webp";
+import postamat5 from "@assets/postamat5.webp";
+import postamat6 from "@assets/postamat6.webp";
 
-import healthcareImage1 from "@assets/healthcare_image_1.png";
-import healthcareImage2 from "@assets/healthcare_image_2.png";
-import healthcareImage3 from "@assets/healthcare_image_3.png";
+// Healthcare images
+import healthcare1 from "@assets/healthcare_image_1.webp";
+import healthcare2 from "@assets/healthcare_image_2.webp";
+import healthcare3 from "@assets/healthcare_image_3.webp";
 
-import prmImage1 from "@assets/prm_image_1.png";
-import screencastImage1 from "@assets/screencast_image_1.png";
-import screencastImage2 from "@assets/screencast_image_2.png";
-import screencastImage3 from "@assets/screencast_image_3.png";
+// PRM & Screencast images
+import prm1 from "@assets/prm_image_1.webp";
+import screencast1 from "@assets/screencast_image_1.webp";
+import screencast2 from "@assets/screencast_image_2.webp";
+import screencast3 from "@assets/screencast_image_3.webp";
+
+// Grouped images
+const postamatImages = [postamat1, postamat2, postamat3, postamat4, postamat5, postamat6];
+const healthcareImages = [healthcare1, healthcare2, healthcare3];
+const screencastImages = [screencast1, screencast2, screencast3];
 
 const commercialProjects = [
   {
@@ -52,14 +53,7 @@ const commercialProjects = [
       "Прототип интерфейса для встроенного планшета",
       "Успешное тестирование первым лицом государства",
     ],
-    images: [
-      postamatImage1,
-      postamatImage2,
-      postamatImage3,
-      postamatImage4,
-      postamatImage5,
-      postamatImage6,
-    ],
+    images: postamatImages,
   },
   {
     id: 2,
@@ -82,7 +76,7 @@ const commercialProjects = [
       "Статистика и динамика изменений",
       "Повышение качества медицинского обслуживания",
     ],
-    images: [healthcareImage1, healthcareImage2, healthcareImage3],
+    images: healthcareImages,
   },
   {
     id: 3,
@@ -114,7 +108,7 @@ const commercialProjects = [
       "ИИ-поиск по произвольным запросам",
       "Эффективный нетворкинг и управление связями",
     ],
-    images: [prmImage1],
+    images: [prm1],
   },
   {
     id: 4,
@@ -143,7 +137,7 @@ const commercialProjects = [
       "Web-эмуляция десктоп-приложений",
       "Создание интерактивных обучающих материалов",
     ],
-    images: [screencastImage1, screencastImage2, screencastImage3],
+    images: screencastImages,
   },
 ];
 
