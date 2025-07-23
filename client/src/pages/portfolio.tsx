@@ -15,7 +15,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="pt-[140px] pb-20 px-4">
+    <section className="pt-32 pb-16 px-6 sm:px-10">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -198,7 +198,7 @@ const Portfolio = () => {
           <h2 className="text-3xl font-bold text-gray-800 mb-8">
             Бесплатные проекты, внутренние проекты и техно-демо
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-8"> {/* changed from space-y-6 to space-y-8 */}
             {demoProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -269,7 +269,7 @@ const Portfolio = () => {
         </motion.div>
       </div>
       <Clients prefixBg="" />
-    </div>
+    </section>
   );
 };
 

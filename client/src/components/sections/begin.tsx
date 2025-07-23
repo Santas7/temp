@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 const Begin = ({ prefixBg }: { prefixBg: string }) => {
   return (
-    <section className={`pt-32 pb-12 px-6 sm:px-10 ${prefixBg}`}>
+    <section className={`pt-32 py-16 px-6 sm:px-10 ${prefixBg}`}>
       <div className="max-w-6xl mx-auto text-center px-4 sm:px-8">
         {/* Hero Section */}
         <div className="mb-12 mt-12">

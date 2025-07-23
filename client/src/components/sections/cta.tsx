@@ -4,11 +4,11 @@ import { Send } from "lucide-react";
 
 const CTA = ({prefixBg}: {prefixBg: string}) => {
   return (
-    <section className={`py-32 px-4  ${prefixBg}`}>
+    <section className={`py-16 px-4 ${prefixBg}`}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >

@@ -4,14 +4,14 @@ import { ArrowRight, Users } from "lucide-react";
 
 const Hiring = ({prefixBg}: {prefixBg: string}) => {
   return (
-    <section className={`py-32 px-4 ${prefixBg}`}>
+    <section className={`py-16 px-4 ${prefixBg}`}>
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="border-8 border-gray-100 rounded-3xl p-12 shadow-xl "
+          className="border-8 border-gray-100 rounded-3xl p-12 shadow-xl"
         >
           <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-8">
             <Users className="w-10 h-10 text-purple-600" />

@@ -2,9 +2,9 @@ import { Phone, Mail, Send } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-16">
+    <footer className="bg-gray-800 text-white pt-16 pb-16">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-8 ">
           {/* Левая колонка */}
           <div>
             <h3 className="text-2xl font-bold mb-2">LLM-tech</h3>

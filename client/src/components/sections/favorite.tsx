@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
-import {  MessageCircle, BarChart3, Server, Check, X } from "lucide-react";
+import { MessageCircle, BarChart3, Server, Check, X } from "lucide-react";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa6";
 
 const Favorite = ({prefixBg}: {prefixBg: string}) => {
   return (
-    <section className={`py-20 px-4 ${prefixBg} `}>
-      <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+    <section className={`py-16 px-4 ${prefixBg}`}>
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
@@ -20,20 +21,11 @@ const Favorite = ({prefixBg}: {prefixBg: string}) => {
 
           <div className="grid lg:grid-cols-2 gap-10">
             {/* Нам интересны */}
-            <div className="rounded-3xl bg-white/60 dark:bg-gray-700/60 backdrop-blur-md border-8 border-gray-100 p-8 shadow-lg"> {/* Добавил border */}
+            <div className="rounded-3xl bg-white/60 dark:bg-gray-700/60 backdrop-blur-md border-8 border-gray-100 p-8 shadow-lg">
               <div className="flex items-center mb-6">
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "easeInOut",
-                  }}
-                  className="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded-full p-3 mr-4"
-                >
+                <div className="bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 rounded-full p-3 mr-4">
                   <FaThumbsUp className="w-5 h-5" />
-                </motion.div>
+                </div>
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                   Нам интересны:
                 </h3>
@@ -44,44 +36,35 @@ const Favorite = ({prefixBg}: {prefixBg: string}) => {
                   <Check
                     className="w-5 h-5 text-green-500 dark:text-green-400 mr-3 mt-0.5 flex-shrink-0"
                   />
-                  фокус на ИИ (ML, LLM) и/или backend
+                  Фокус на ИИ (ML, LLM) и/или backend
                 </li>
                 <li className="flex items-start">
                   <Check
                     className="w-5 h-5 text-green-500 dark:text-green-400 mr-3 mt-0.5 flex-shrink-0"
                   />
-                  любые чат-боты (в Telegram или с web-интерфейсом)
+                  Любые чат-боты (в Telegram или с web-интерфейсом)
                 </li>
                 <li className="flex items-start">
                   <Check
                     className="w-5 h-5 text-green-500 dark:text-green-400 mr-3 mt-0.5 flex-shrink-0"
                   />
-                  любой frontend (web, мобильные и desktop-приложения), но только если это не является основной частью разработки, а дополнительной, поверх нашего backend
+                  Любой frontend (web, мобильные и desktop-приложения), но только если это не является основной частью разработки, а дополнительной, поверх нашего backend
                 </li>
                 <li className="flex items-start">
                   <Check
                     className="w-5 h-5 text-green-500 dark:text-green-400 mr-3 mt-0.5 flex-shrink-0"
                   />
-                  бюджет от 300k и выше (ниже — обсуждаемо, если небольшая, но интересная задача)
+                  Бюджет от 300k и выше (ниже — обсуждаемо, если небольшая, но интересная задача)
                 </li>
               </ul>
             </div>
 
             {/* Нам не подходят */}
-            <div className="rounded-3xl bg-white/60 dark:bg-gray-700/60 backdrop-blur-md border-8 border-gray-100 p-8 shadow-lg"> {/* Добавил border */}
+            <div className="rounded-3xl bg-white/60 dark:bg-gray-700/60 backdrop-blur-md border-8 border-gray-100 p-8 shadow-lg">
               <div className="flex items-center mb-6">
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "easeInOut",
-                  }}
-                  className="bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 rounded-full p-3 mr-4"
-                >
+                <div className="bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 rounded-full p-3 mr-4">
                   <FaThumbsDown className="w-5 h-5" />
-                </motion.div>
+                </div>
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
                   Нам не подходят:
                 </h3>
@@ -92,85 +75,87 @@ const Favorite = ({prefixBg}: {prefixBg: string}) => {
                   <X
                     className="w-5 h-5 text-red-500 dark:text-red-400 mr-3 mt-0.5 flex-shrink-0"
                   />
-                  заказы, где главное — «сделать красиво» (визуальный дизайн/UI/UX
+                  Заказы, где главное — «сделать красиво» (визуальный дизайн/UI/UX
                   без сложной логики внутри) — это в веб/дизайн-студии
                 </li>
                 <li className="flex items-start">
                   <X
                     className="w-5 h-5 text-red-500 dark:text-red-400 mr-3 mt-0.5 flex-shrink-0"
                   />
-                  задачи в области бухгалтерии, 1С, SAP, прочего «кровавого
+                  Задачи в области бухгалтерии, 1С, SAP, прочего «кровавого
                   enterprise» и интеграции чужих решений — это к интеграторам
                 </li>
                 <li className="flex items-start">
                   <X
                     className="w-5 h-5 text-red-500 dark:text-red-400 mr-3 mt-0.5 flex-shrink-0"
                   />
-                  заказы с бюджетом ≪ 300k — это к фрилансерам 🙂
+                  Заказы с бюджетом ≪ 300k — это к фрилансерам 🙂
                 </li>
               </ul>
             </div>
           </div>
         </motion.div>
+
         {/* Идеальные задачи */}
-<motion.div
-  initial={{ opacity: 0, y: 50 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="mt-20 max-w-4xl mx-auto bg-white/60 dark:bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl border-8 border-gray-100"
->
-  <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-    Примеры идеальных задач для нас:
-  </h3>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-10 max-w-4xl mx-auto bg-white/60 dark:bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-xl border-8 border-gray-100"
+        >
+          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Примеры идеальных задач для нас:
+          </h3>
 
-  <div className="space-y-8">
-    {/* Автоматизация техподдержки */}
-    <div className="flex items-start gap-4">
-      <div className="bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300 p-3 rounded-xl">
-        <MessageCircle className="w-6 h-6" />
-      </div>
-      <div>
-        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
-          Автоматизация техподдержки
-        </h4>
-        <p className="text-gray-700 dark:text-gray-300">
-          ИИ, который грамотно отвечает на вопросы клиентов, имеет интеграции с внутренними системами заказчика, базами знаний, различными API и т.п.
-        </p>
-      </div>
-    </div>
+          <div className="space-y-8">
+            {/* Автоматизация техподдержки */}
+            <div className="flex items-start gap-4">
+              <div className="bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300 p-3 rounded-xl">
+                <MessageCircle className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
+                  Автоматизация техподдержки
+                </h4>
+                <p className="text-gray-700 dark:text-gray-300">
+                  ИИ, который грамотно отвечает на вопросы клиентов, имеет интеграции с внутренними системами заказчика, базами знаний, различными API и т.п.
+                </p>
+              </div>
+            </div>
 
-    {/* Обработка данных */}
-    <div className="flex items-start gap-4">
-      <div className="bg-teal-100 text-teal-600 dark:bg-teal-900 dark:text-teal-300 p-3 rounded-xl">
-        <BarChart3 className="w-6 h-6" />
-      </div>
-      <div>
-        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
-          Обработка данных
-        </h4>
-        <p className="text-gray-700 dark:text-gray-300">
-          Обработка данных любого рода (тексты, аудио, видео) и дальнейшая автоматизированная аналитика / бизнес-логика поверх анализа (с применением ИИ / ML и не только).
-        </p>
-      </div>
-    </div>
+            {/* Обработка данных */}
+            <div className="flex items-start gap-4">
+              <div className="bg-teal-100 text-teal-600 dark:bg-teal-900 dark:text-teal-300 p-3 rounded-xl">
+                <BarChart3 className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
+                  Обработка данных
+                </h4>
+                <p className="text-gray-700 dark:text-gray-300">
+                  Обработка данных любого рода (тексты, аудио, видео) и дальнейшая автоматизированная аналитика / бизнес-логика поверх анализа (с применением ИИ / ML и не только).
+                </p>
+              </div>
+            </div>
 
-    {/* Языки разработки */}
-    <div className="flex items-start gap-4">
-      <div className="bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 p-3 rounded-xl">
-        <Server className="w-6 h-6" />
+            {/* Языки разработки */}
+            <div className="flex items-start gap-4">
+              <div className="bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 p-3 rounded-xl">
+                <Server className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
+                  Язык разработки
+                </h4>
+                <p className="text-gray-700 dark:text-gray-300">
+                  В основном — <span className="font-semibold text-gray-900 dark:text-white">Python</span> + любые другие языки, если задача требует.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
-      <div>
-        <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
-          Язык разработки
-        </h4>
-        <p className="text-gray-700 dark:text-gray-300">
-          В основном — <span className="font-semibold text-gray-900 dark:text-white">Python</span> + любые другие языки, если задача требует.
-        </p>
-      </div>
-    </div>
-  </div>
-</motion.div>
     </section>
   );
 };

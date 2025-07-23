@@ -19,6 +19,19 @@ import {
 } from "react-icons/si";
 import { Code } from "lucide-react";
 import type { ReactElement } from "react";
+import FastAPIIcon from "@assets/tech-icons/fastapi.png";
+import vLLMIcon from "@assets/tech-icons/vllm.png";
+import llamaCppIcon from "@assets/tech-icons/llamacpp.png";
+import hfIcon from "@assets/tech-icons/hf.png";
+import scikitLearnIcon from "@assets/tech-icons/scikitlearn.png";
+import nemoIcon from "@assets/tech-icons/nemo.png";
+import ollamaIcon from "@assets/tech-icons/ollama.png";
+import PEIcon from "@assets/tech-icons/pe.png";
+import langChainIcon from "@assets/tech-icons/langchain.png";
+import langGraphIcon from "@assets/tech-icons/langgraph.png";
+import n8nIcon from "@assets/tech-icons/n8n.png";
+import tokenizationIcon from "@assets/tech-icons/tokenization.png";
+import SQLIcon from "@assets/tech-icons/sql.png";
 
 // Тип всех поддерживаемых технологий
 type Technology =
@@ -35,7 +48,7 @@ type Technology =
   | "SQL"
   | "PostgreSQL"
   | "MySQL"
-  | "NoSQL (MongoDB, Redis)"
+  | "NoSQL"
   | "vLLM"
   | "llama.cpp"
   | "HuggingFace"
@@ -51,7 +64,7 @@ type Technology =
   | "n8n"
   | "Tokenization"
   | "Docker"
-  | "GitLab CI/CD";
+  | "CI/CD";
 
 // Основная мапа: технология => иконка
 export const techIcons: Record<Technology, ReactElement> = {
@@ -63,28 +76,28 @@ export const techIcons: Record<Technology, ReactElement> = {
   Redux: <SiRedux className="w-8 h-8 text-purple-600" />,
   "HTML/CSS": <FaHtml5 className="w-8 h-8 text-orange-600" />,
   Flask: <SiFlask className="w-8 h-8 text-black" />,
-  FastAPI: <Code className="w-8 h-8 text-green-600" />,
+  FastAPI: <img src={FastAPIIcon} alt="FastAPI" className="w-8 h-8" />,
   Swagger: <SiSwagger className="w-8 h-8 text-green-600" />,
-  SQL: <SiPostgresql className="w-8 h-8 text-blue-800" />,
+  SQL: <img src={SQLIcon} className="w-8 h-8 text-blue-800" />,
   PostgreSQL: <SiPostgresql className="w-8 h-8 text-blue-800" />,
   MySQL: <SiMysql className="w-8 h-8 text-blue-600" />,
-  "NoSQL (MongoDB, Redis)": <SiMongodb className="w-8 h-8 text-green-500" />,
-  vLLM: <Code className="w-8 h-8 text-indigo-500" />,
-  "llama.cpp": <Code className="w-8 h-8 text-indigo-500" />,
-  HuggingFace: <Code className="w-8 h-8 text-orange-500" />,
+  "NoSQL": <SiMongodb className="w-8 h-8 text-green-500" />,
+  vLLM: <img src={vLLMIcon} alt="vLLM" className="w-8 h-8" />,
+  "llama.cpp": <img src={llamaCppIcon} alt="llama.cpp" className="w-8 h-8" />,
+  HuggingFace: <img src={hfIcon} alt="HuggingFace" className="w-8 h-8" />,
   PyTorch: <SiPytorch className="w-8 h-8 text-red-500" />,
-  "Scikit-Learn": <Code className="w-8 h-8 text-yellow-600" />,
-  Nemo: <Code className="w-8 h-8 text-blue-500" />,
+  "Scikit-Learn": <img src={scikitLearnIcon} alt="Scikit-Learn" className="w-8 h-8" />,
+  Nemo: <img src={nemoIcon} alt="Nemo" className="w-8 h-8" />,
   Transformers: <Code className="w-8 h-8 text-orange-500" />,
-  Ollama: <Code className="w-8 h-8 text-purple-500" />,
-  LangChain: <Code className="w-8 h-8 text-teal-500" />,
-  LangGraph: <Code className="w-8 h-8 text-teal-500" />,
-  FAISS: <Code className="w-8 h-8 text-red-500" />,
-  "Prompt Engineering": <Code className="w-8 h-8 text-blue-600" />,
-  n8n: <Code className="w-8 h-8 text-pink-500" />,
-  Tokenization: <Code className="w-8 h-8 text-blue-600" />,
+  Ollama: <img src={ollamaIcon} alt="Ollama" className="w-8 h-8" />,
+  LangChain: <img src={langChainIcon} alt="LangChain" className="w-8 h-8" />,
+  LangGraph: <img src={langGraphIcon} alt="LangGraph" className="w-8 h-8" />,
+  FAISS: <img src={n8nIcon} alt="FAISS" className="w-8 h-8" />, // Using n8n icon as placeholder
+  "Prompt Engineering": <img src={PEIcon} alt="Prompt Engineering" className="w-8 h-8" />,
+  n8n: <img src={n8nIcon} alt="n8n" className="w-8 h-8" />,
+  Tokenization: <img src={tokenizationIcon} alt="Tokenization" className="w-8 h-8" />,
   Docker: <FaDocker className="w-8 h-8 text-blue-500" />,
-  "GitLab CI/CD": <SiGitlab className="w-8 h-8 text-orange-600" />,
+  "CI/CD": <SiGitlab className="w-8 h-8 text-orange-600" />,
 };
 
 // Массив доступных технологий
@@ -102,7 +115,7 @@ export const technologies: Technology[] = [
   "SQL",
   "PostgreSQL",
   "MySQL",
-  "NoSQL (MongoDB, Redis)",
+  "NoSQL",
   "vLLM",
   "llama.cpp",
   "HuggingFace",
@@ -118,7 +131,7 @@ export const technologies: Technology[] = [
   "n8n",
   "Tokenization",
   "Docker",
-  "GitLab CI/CD",
+  "CI/CD",
 ];
 
 // Функция для безопасного получения иконки

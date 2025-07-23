@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-
 import { advantages } from "@/data/advantages";
 
 const Advantages = ({prefixBg}: {prefixBg: string}) => {
   return (
-    <section className={`py-32 px-4  ${prefixBg}`}>
+    <section className={`py-16 px-4 ${prefixBg}`}>
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
@@ -25,8 +24,8 @@ const Advantages = ({prefixBg}: {prefixBg: string}) => {
           {advantages.map((advantage, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
               className="rounded-2xl p-8 shadow-lg text-center hover:shadow-xl transition-all duration-300 border-8 border-gray-100"

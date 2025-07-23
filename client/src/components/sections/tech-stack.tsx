@@ -6,8 +6,8 @@ const TechStack = ({ prefixBg }: { prefixBg: string }) => {
     <section className={`py-12 px-4 ${prefixBg}`}>
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="mb-8 text-center"
@@ -24,8 +24,8 @@ const TechStack = ({ prefixBg }: { prefixBg: string }) => {
           {technologies.map((tech, i) => (
             <motion.div
               key={tech}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: i * 0.02 }}
               viewport={{ once: true }}
               className="relative rounded-lg border border-gray-200 bg-white p-2 h-20 shadow-sm hover:shadow-md transition border-8 border-gray-50"
@@ -44,6 +44,5 @@ const TechStack = ({ prefixBg }: { prefixBg: string }) => {
     </section>
   );
 };
-
 
 export default TechStack;

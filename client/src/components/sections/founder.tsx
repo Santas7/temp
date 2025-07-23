@@ -5,28 +5,13 @@ import founderPhoto from "@assets/owner_1752740690388.png";
 const Founder = ({ prefixBg }: { prefixBg: string }) => {
   return (
     <section
-      className={`py-24 px-8 text-gray-900 dark:text-gray-100 ${prefixBg}`}
+      className={`py-16 px-8 text-gray-900 dark:text-gray-100 ${prefixBg}`}
     >
       <div className="max-w-6xl mx-auto relative">
-        {/* Фоновые круги */}
-        <motion.div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          initial={{ opacity: 0.3 }}
-          animate={{ opacity: [0.3, 0.05, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 10% 20%, rgba(0,0,0,0.05) 2px, transparent 10px), radial-gradient(circle at 80% 70%, rgba(0,0,0,0.05) 2px, transparent 10px)",
-            backgroundSize: "40px 40px",
-            zIndex: 0,
-          }}
-        />
-
         {/* Основной блок */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
           className="relative rounded-[40px] p-8 md:p-12 shadow-lg flex flex-col md:grid md:grid-cols-3 gap-8 md:gap-12 items-center z-10 founder-inner border-8 border-gray-100 dark:border-gray-800 transition-all duration-300"
@@ -53,7 +38,6 @@ const Founder = ({ prefixBg }: { prefixBg: string }) => {
             </h3>
 
             <ul className="list-disc list-inside space-y-4 text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
-
               <li>
                 Со-основатель, ex-CTO и руководитель разработки{" "}
                 <a
@@ -81,7 +65,7 @@ const Founder = ({ prefixBg }: { prefixBg: string }) => {
                 Преподаватель IT-дисциплин в Самарском университете, создал несколько авторских курсов, включая «Управление разработкой ПО», «Культура разработки ПО» и «Инструменты анализа данных»
               </li>
               <li>
-                 В 2024 году основал компанию LLM technology с фокусом на AI-решения и backend
+                В 2024 году основал компанию LLM technology с фокусом на AI-решения и backend
               </li>
             </ul>
 
